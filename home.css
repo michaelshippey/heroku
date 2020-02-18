@@ -1,13 +1,26 @@
+title {
+    background-color:#808080;
+    font-size: 32pt;
+
+}
+
+.header {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+  }
+
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #1e90ff;
+    background-color: #808080;
   }
   
   li {
-    float: right;
+    float: left;
   }
   
   li a {
@@ -20,5 +33,58 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: #00bfff
+    background-color: #606060
   }
+
+    
+div {
+    float: left;
+    background-color: #DDD ;
+    margin: 10 10;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-left: 30px;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  td, th {
+    padding: 10 10;
+  }
+  
+  th {
+    background-color: #DDD;
+  }
+
+  /* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #606060;
+    color: white;
+    text-align: center;
+}

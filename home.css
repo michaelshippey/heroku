@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 10px 10px;
     background-color: #FFFAFA;
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
@@ -23,13 +23,14 @@ header::after {
 
 .logo {
     float: left;
-    padding: 10px 0;
+    padding: 10px 10px;
     height: 150px;
     width: 150px;
 }
 
 nav {
     float: right;
+    text-align: end;
 }
 
 nav ul {
@@ -78,9 +79,7 @@ footer {
     width: 100%;
     background-color: #4682B4;
     padding: 60px 0px;
-}
-footer div {
-    float: middle;
+    text-align: center;
 }
 
 footer li {

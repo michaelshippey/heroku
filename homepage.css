@@ -38,7 +38,7 @@
     background-image: url(menu.png);
     position: absolute;
     top: 13px;
-    margin-left: 135px;
+    margin-left: 50px;
 }
 
 #search input[type = "text"] {
@@ -58,7 +58,7 @@
 }
 
 #search input[type = "text"]:focus {
-    background: url(search-black.png) no-repeat 10px 6px #267bb6;
+    background: url(search-black.png) no-repeat 10px 6px #b6fdff;
     color: #6a6f75;
     width: 350px;
     -webkit-box-shadow: 0 1px 0 rgba(255,255,255, .1) 0 1px 0px rgba(0,0,0,.9) inset;

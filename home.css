@@ -8,9 +8,6 @@ body {
 .container { 
     width: 100%;
     margin: 0;
-    position: absolute;
-    bottom: 0;
-
 }
 
 header {
@@ -21,20 +18,18 @@ header::after {
     content: '';
     display: table;
     clear: both;
-
 }
-
 
 .logo {
     float: left;
     padding: 10px 10px;
     height: 150px;
-    width: 200x;
+    width: 170x;
 }
 
 nav {
     float: right;
-    text-align: end;
+    text-align: right;
     padding: 10px 10px;
 }
 

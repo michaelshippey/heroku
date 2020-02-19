@@ -8,7 +8,7 @@
 .header {
     background-image: url(menu.png);
     background-color: #33ccff;
-    height: 70px;
+    height: 65px;
     border-bottom: 0px;
     padding-left: auto;
     padding-right: auto;
@@ -47,6 +47,7 @@
     border: 0 none;
     font: bold 12px Arial, Helvetica, Sans-serif;
     padding: 6px 15px 6px 35px;
+    margin: 0px;
     text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0 1px 0 rgba(255,255,255, .1) 0 1px 3px rgba(0,0,0,.2) inset;
     -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .1) 0 1px 3px rgba(0,0,0,.2) inset;
@@ -103,4 +104,26 @@
 
 #navBar a:hover {
     background-image: url(menu_back_drop.png);
+}
+
+h2 { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 8px;
+    color: #0084c6
+}
+
+input[type = "text"] {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    font-size: 15px;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    outline: none;
+}
+
+input[type="text"]:hover {
+    border: 1px solid #006fc4
 }

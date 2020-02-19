@@ -6,9 +6,9 @@
 }
 
 .sitebody{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
@@ -173,12 +173,14 @@ footer a {
     width: 1000px; 
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
     flex: 1;
 }
 
-.signuptble{
-    padding-top: 200px;
-    padding-left: 300px;
-    background-color: antiquewhite;
+#formbox {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 8px;
+  padding-top: 40px;
+  text-decoration-color: #0084c6;
+  text-align: center;
 }

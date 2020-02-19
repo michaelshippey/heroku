@@ -127,3 +127,35 @@ input[type = "text"] {
 input[type="text"]:hover {
     border: 1px solid #006fc4
 }
+
+input[type="submit"] {
+    background-color: #006fc4;
+    border: 1px solid #00508D;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 7px;
+}
+
+footer {
+    width: 100%;
+    background-color: #33ccff;
+    padding: 60px 0px;
+    text-align: center;
+}
+
+footer li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 25px;
+    position: relative;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+}

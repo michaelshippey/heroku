@@ -11,8 +11,10 @@ class Dao {
             $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
          } catch (Exception $e) {
            echo print_r($e,1);
+           return null;
          }
          return $connection;
     }
      // mysql://b517badf6a35ba:66daf5f2@us-cdbr-iron-east-04.cleardb.net/heroku_e5491682d442867?reconnect=true
 }
+?>

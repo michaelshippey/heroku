@@ -14,12 +14,14 @@ include("header.php");
 
                         <?php 
 
-                            if (isset($_SESSION['message'])) {
-                                echo "<div id='error'>{$_SESSION['message']}</div>";
-                                unset($_SESSION['messsage']);
+                            if (isset($_SESSION['errors'])) {
+                                foreach ($_SESSION['errors'] as $error) {
+                                    echo "<div id='error'>{$error}</div>";
+                                 }
                             }
-
+                            unset($_SESSION['errors']);
                         ?>
+
                         <form action = "login_handler.php" method = "POST">
                             <input type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
                             <input type = "textbox" id ="lname" name ="lname" size = "25" placeholder="Last Name" /> <br /><br />
@@ -29,6 +31,7 @@ include("header.php");
                             <input type = "password" id ="password" name ="password" size = "25" placeholder="Password" /> <br /><br />
                             <input type = "password" id ="password2" name ="password2" size = "25" placeholder="Password (confirm)" /> <br /><br />
                             <input type = "submit" name = "submit" value = "Sign up!">  <br /><br />
+
                         </form>
                     </td>
                 </tr>

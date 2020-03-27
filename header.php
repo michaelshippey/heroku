@@ -6,7 +6,7 @@
         <div class="header">
             <div id = "wrapper">
                 <div class = logo>
-                    <a href = "homepage.html"> <img src = "logo.png"/> </a>
+                    <a href = "homepage.php"> <img src = "logo.png"/> </a>
                 </div>
             
                 <div class = "searchbar">
@@ -15,9 +15,9 @@
                     </form>
                 </div>
                 <div id="navBar">
-                    <a href ="homepage.html"> Home </a>
+                    <a href ="homepage.php"> Home </a>
                     <a href ="profile.html"> About </a>
-                    <a href ="homepage.html"> Sign Up</a>
+                    <a href ="homepage.php"> Sign Up</a>
                     <a href ="login.html"> Sign In </a>
                 </div>
             </div>

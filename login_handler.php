@@ -15,6 +15,33 @@
       $errors[] = "Error, alpha characters only in the username.";
     }
 
+    if(!ctype_alpha($fname)) {
+        $errors[] = "Error, alpha characters only in the first name.";
+    }
+
+    if(!ctype_alpha($lname)) {
+        $errors[] = "Error, alpha characters only in the last name.";
+    }
+
+
+    
+    if (!preg_match("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/",$email)) {
+        $errors[] = "Error, Invalid email address!";
+    }
+
+    if (!preg_match("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/",$email2)) {
+        $errors[] = "Error, Invalid validation email address!";
+    }
+
+    if($email != $email2){
+        $errors[] = "Error, emails do not match!";
+    }
+
+    if($password != $password2){
+        $errors[] = "Error, passwords do not match!";
+    }
+
+
     if (strlen($_POST['fname']) ==  0) {
         $errors[] = "Error, First Name cannot be blank.";
     }
@@ -36,5 +63,15 @@
     if (strlen($_POST['password2']) ==  0) {
         $errors[] = "Error, Password validation cannot be blank.";
     }
+
+
+
+  require_once 'Dao.php';
+  $dao = new Dao();
+  $dao->userExists($username, $password)) 
+  $dao->saveUser($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['username'], $_POST['password']);
+  $_SESSION['auth'] = true;
+  header("Location: https://michaelshippey.herokuapp.com/profile.php");
+  exit;
 
 ?>

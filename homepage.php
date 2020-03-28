@@ -1,6 +1,7 @@
 <?php 
-session_start();
+
 include("header.php"); 
+session_start();
 ?>
 
     <div  id = "content">
@@ -15,8 +16,8 @@ include("header.php");
                         <?php 
 
                             if (isset($_SESSION['errors'])) {
-                                foreach ($_SESSION['errors'] as $error) {
-                                    echo "<div id='error'>{$error}</div>";
+                                foreach ($_SESSION['errors'] as $errors) {
+                                    echo "<div id='error'>{$errors}</div>";
                                  }
                             }
                             unset($_SESSION['errors']);

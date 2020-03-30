@@ -16,11 +16,11 @@
             $errors[] = "Error, alpha characters only in the username.";
           }
       
-          if(!ctype_alpha($fname)) {
+          if(!ctype_alpha($firstname)) {
               $errors[] = "Error, alpha characters only in the first name.";
           }
       
-          if(!ctype_alpha($lname)) {
+          if(!ctype_alpha($lastname)) {
               $errors[] = "Error, alpha characters only in the last name.";
           }
       

@@ -2,6 +2,25 @@
 
 include("header.php"); 
 session_start();
+
+
+    $name_preset = "";
+    $comment_preset = "";
+    $email_preset = "";
+    $email2_preset = "";
+    $username_preset = "";
+    $password_preset = "";
+    $password2_preset = "";
+    
+    if (isset($_SESSION['form'])) {
+        $firstname_preset = $_SESSION['form']['firstname'];
+        $lastname_preset = $_SESSION['form']['lastname'];
+        $email_preset = $_SESSION['form']['email'];
+        $email2_preset = $_SESSION['form']['email2'];
+        $username_preset = $_SESSION['form']['username'];
+        $password_preset = $_SESSION['form']['password'];
+        $password2_preset = $_SESSION['form']['password2'];
+    }
 ?>
 
     <div  id = "content">

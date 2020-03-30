@@ -171,3 +171,9 @@ footer a {
     padding-left: 300px;
     background-color: antiquewhite;
 }
+
+.error {
+    background-color: red;
+    text-decoration: black;
+    
+}

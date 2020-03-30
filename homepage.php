@@ -13,15 +13,7 @@ session_start();
                     <td width = "40%" valign="top">
                         <h2> Sign up Today!</h2>
 
-                        <?php 
-
-                            if (isset($_SESSION['errors'])) {
-                                foreach ($_SESSION['errors'] as $errors) {
-                                    echo "<div id='error'>{$errors}</div>";
-                                 }
-                            }
-                            unset($_SESSION['errors']);
-                        ?>
+                        
 
                         <form action = "login_handler.php" method = "POST">
                             <input type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
@@ -34,6 +26,17 @@ session_start();
                             <input type = "submit" name = "submit" value = "Sign up!">  <br /><br />
 
                         </form>
+
+                        <?php 
+
+                            if (isset($_SESSION['errors'])) {
+                                foreach ($_SESSION['errors'] as $errors) {
+                                    echo "<div id='error'>{$errors}</div>";
+                                 }
+                                 unset($_SESSION['errors']);
+                            }
+                            
+                        ?>
                     </td>
                 </tr>
             </table>

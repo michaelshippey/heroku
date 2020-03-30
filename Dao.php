@@ -1,17 +1,20 @@
 <?php
+require_once 'KLogger.php';
+
 class Dao {
-    private $host = "us-cdbr-iron-east-04.cleardb.net"
-    private $dbname = "heroku_e5491682d442867"
-    private $username = "b517badf6a35ba"
-    private $password = "66daf5f2"
+    private $host = "us-cdbr-iron-east-04.cleardb.net";
+    private $dbname = "heroku_e5491682d442867";
+    private $username = "b517badf6a35ba";
+    private $password = "66daf5f2";
+    private $logger;
 
     
     public function getConnection () {
         try {
             $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
          } catch (Exception $e) {
-           echo print_r($e,1);
-           return null;
+          $this->logger->LogError("Couldn't connect to the database: " . $e->getMessage());
+          return null;
          }
          return $connection;
     }
@@ -19,7 +22,8 @@ class Dao {
     public function userExists($username){
       $conn = $this->getConnection();
       $saveQuery = "select * from users where username='$username'";;
-      if (mysql_num_rows($saveQuery) > 0) {
+      if (mysql_num_rows($saveQuery) == 1) {
+        $_SESSION['auth'] = true;
         echo "Username already exists";
         mysqli_close($conn);
         exit();
@@ -27,7 +31,7 @@ class Dao {
       else{
         $_SESSION['auth'] = false;
         $_SESSION['message'] = "Invalid username or password";
-        header("Location: https://michaelshippey.herokuapp.com/profile.php");
+        header("Location: https://michaelshippey.herokuapp.com/homepage.php");
       }
     }
     public function saveUser($firstname, $lastname, $email, $username, $password){
@@ -35,6 +39,7 @@ class Dao {
       $saveQuery = "insert into users (username, first_name, last_name, 
       email, password) values (:username, :first_name, :lastname, :email, 
       :password)";
+      
       $q = $conn->prepare($saveQuery);
       $q->bindParam(":username", $username);
       $q->bindParam(":first_name", $firstname);

@@ -1,6 +1,4 @@
 <?php
-// Start Session
-session_start();
 
 // check user login
 if(!isset($_SESSION['user_id']))

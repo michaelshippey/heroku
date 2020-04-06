@@ -4,7 +4,9 @@
     $errors = array();
 
     // check for register new user request
-    if(!empty($_POST['register']))
+    if(!empty($_POST['register'])) {
+
+    
         $firstname = trim($_POST['fname']);
         $lastname = trim($_POST['lname']);
         $email= trim($_POST['email']);
@@ -85,5 +87,6 @@
             $_SESSION['user_id'] = $user_id;
             header("Location: https://michaelshippey.herokuapp.com/profile.php");
         }
+    }
     
 ?>

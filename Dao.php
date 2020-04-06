@@ -3,13 +3,13 @@
 class Dao {
     private $host = "us-cdbr-iron-east-04.cleardb.net";
     private $dbname = "heroku_e5491682d442867";
-    private $username = "b517badf6a35ba";
-    private $password = "66daf5f2";
+    private $username1 = "b517badf6a35ba";
+    private $password1 = "66daf5f2";
 
     
     public function getConnection () {
         try {
-            $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
+            $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username1, $this->password1);
             echo "Connection Established"
          } catch (PDOException $e) {
           echo "Error: " . $e->getMessage();
@@ -49,7 +49,6 @@ class Dao {
       $q->bindParam(":email", $email);
       $q->bindParam(":password", $password);
       $q->execute();
-      header("Location: https://michaelshippey.herokuapp.com/homepage.php");
     }
 
 

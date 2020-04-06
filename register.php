@@ -12,15 +12,15 @@ include("header.php");
     $password_preset = "";
     $password2_preset = "";
     
-    // if (isset($_SESSION['form'])) {
-    //     $firstname_preset = $_SESSION['form']['firstname'];
-    //     $lastname_preset = $_SESSION['form']['lastname'];
-    //     $email_preset = $_SESSION['form']['email'];
-    //     $email2_preset = $_SESSION['form']['email2'];
-    //     $username_preset = $_SESSION['form']['username'];
-    //     $password_preset = $_SESSION['form']['password'];
-    //     $password2_preset = $_SESSION['form']['password2'];
-    // }
+    if (isset($_SESSION['form'])) {
+        $firstname_preset = $_SESSION['form']['fname'];
+        $lastname_preset = $_SESSION['form']['lname'];
+        $email_preset = $_SESSION['form']['email'];
+        $email2_preset = $_SESSION['form']['email2'];
+        $username_preset = $_SESSION['form']['username'];
+        $password_preset = $_SESSION['form']['password'];
+        $password2_preset = $_SESSION['form']['password2'];
+    }
 ?>
 
     <div  id = "content">
@@ -33,13 +33,13 @@ include("header.php");
                         <h2> Sign up Today!</h2>
 
                         <form action = "registerProcess.php" method = "POST">
-                            <input type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
-                            <input type = "textbox" id ="lname" name ="lname" size = "25" placeholder="Last Name" /> <br /><br />
-                            <input type = "textbox" id ="email" name ="email" size = "25" placeholder="Email Address" /> <br /><br />
-                            <input type = "textbox" id ="email2" name ="email2" size = "25" placeholder="Email Address (confirm)" /> <br /><br />
-                            <input type = "textbox" id ="username" name ="username" size = "25" placeholder="Username" /> <br /><br />
-                            <input type = "password" id ="password" name ="password" size = "25" placeholder="Password" /> <br /><br />
-                            <input type = "password" id ="password2" name ="password2" size = "25" placeholder="Password (confirm)" /> <br /><br />
+                            <input value = "<?php echo $firstname_preset; ?>"  type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
+                            <input value = "<?php echo $lastname_preset; ?>"  type = "textbox" id ="lname" name ="lname" size = "25" placeholder="Last Name" /> <br /><br />
+                            <input value = "<?php echo $email_preset; ?>"  type = "textbox" id ="email" name ="email" size = "25" placeholder="Email Address" /> <br /><br />
+                            <input value = "<?php echo $email2_preset; ?>"  type = "textbox" id ="email2" name ="email2" size = "25" placeholder="Email Address (confirm)" /> <br /><br />
+                            <input value = "<?php echo $username_preset; ?>"  type = "textbox" id ="username" name ="username" size = "25" placeholder="Username" /> <br /><br />
+                            <input value = "<?php echo $password_preset; ?>"  type = "password" id ="password" name ="password" size = "25" placeholder="Password" /> <br /><br />
+                            <input value = "<?php echo $password2_preset; ?>"  type = "password" id ="password2" name ="password2" size = "25" placeholder="Password (confirm)" /> <br /><br />
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>

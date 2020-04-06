@@ -88,5 +88,5 @@
             header("Location: https://michaelshippey.herokuapp.com/profile.php");
             exit;
         }
-    }
+    
 ?>

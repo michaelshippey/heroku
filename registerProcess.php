@@ -77,7 +77,7 @@
             exit;
         }
         else {
-            unset($_SESSION['form']);
+            unset($_SESSION['user_id']);
 
             require_once 'Dao.php';
             $dao = new Dao();

@@ -26,8 +26,8 @@ class Dao {
         $q->bindParam(":password", $password);
         $_SESSION['auth'] = true;
         echo "Username already exists";
-        mysqli_close($conn);
-        exit();
+    
+        exit;
       }
       else{
         $_SESSION['auth'] = false;

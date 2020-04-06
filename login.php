@@ -11,6 +11,9 @@ $password = $_POST['password'];
 $password2 = $_POST['password2'];
 
 
+
+
+
 require_once 'Dao.php';
 
 try {
@@ -20,7 +23,25 @@ try {
     
     $dao->login($_POST['username'], $_POST['password']);
     header("Location: https://michaelshippey.herokuapp.com/login.php");
+    exit;
+} catch(PDOException $Exception){
+    throw new MyDatabaseException( $Exception->getMessage( ) ,
+    (int)$Exception->getCode( ) );
 }
     
 
+?>
+<?php 
+include_once('header.php');
+?>
+        <div  id = "content">
+          <form id = "formbox">
+            <h2>Username</h2> <input type="text" name = "myname"> </br>
+            <h2>Password</h2> <input type="text" name = "mypword"><br /><br />
+            <input type = "submit" name = "submit" value = "Login"><br /><br />
+          </form>
+        </div>
+
+<?php 
+include_once('footer.php');
 ?>

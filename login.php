@@ -19,7 +19,7 @@ try {
     $dao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $dao->login($_POST['username'], $_POST['password']);
-    header("Location: https://michaelshippey.herokuapp.com/home.php");
+    header("Location: https://michaelshippey.herokuapp.com/login.php");
 }
     
 

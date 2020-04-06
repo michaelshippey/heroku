@@ -1,1 +1,1 @@
-<?php include_once("homepage.php"); ?>
+<?php include_once("register.php"); ?>

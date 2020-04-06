@@ -1,6 +1,7 @@
 <?php
 
 class Dao {
+
     private $host = "us-cdbr-iron-east-04.cleardb.net";
     private $dbname = "heroku_e5491682d442867";
     private $username1 = "b517badf6a35ba";
@@ -23,7 +24,6 @@ class Dao {
       if (mysql_num_rows($saveQuery) == 1) {
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":username", $username);
-        $q->bindParam(":password", $password);
         $_SESSION['auth'] = true;
         echo "Username already exists";
     
@@ -37,18 +37,24 @@ class Dao {
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){
-      $conn = $this->getConnection();
-      $saveQuery = "INSERT INTO 'users' ('username', 'first_name', 'last_name', 
-      'email', 'password') VALUES (:username, :first_name, :last_name, :email, 
-      :password)";
-      
-      $q = $conn->prepare($saveQuery);
-      $q->bindParam(":username", $username);
-      $q->bindParam(":first_name", $firstname);
-      $q->bindParam(":last_name", $lastname);
-      $q->bindParam(":email", $email);
-      $q->bindParam(":password", $password);
-      $q->execute();
+      try {
+        $conn = $this->getConnection();
+        $saveQuery = "INSERT INTO users (username, first_name, last_name, 
+        email, password) VALUES (:username, :first_name, :last_name, :email, 
+        :password)";
+        
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":username", $username);
+        $q->bindParam(":first_name", $firstname);
+        $q->bindParam(":last_name", $lastname);
+        $q->bindParam(":email", $email);
+        $q->bindParam(":password", $password);
+        $q->execute();
+        return $conn->lastInsertId();
+      }  catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+      }
+   
     }
 
 

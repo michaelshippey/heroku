@@ -4,7 +4,7 @@
     $errors = array();
 
     // check for register new user request
-
+    if(!empty($_POST['register']))
         $firstname = trim($_POST['fname']);
         $lastname = trim($_POST['lname']);
         $email= trim($_POST['email']);
@@ -37,7 +37,7 @@
             $errors[] = "Error, Invalid validation email address!";
         }
 
-        if($email != $email2){
+        else if($email != $email2){
             $errors[] = "Error, emails do not match!";
         }
       
@@ -77,8 +77,6 @@
             exit;
         }
         else {
-            unset($_SESSION['user_id']);
-
             require_once 'Dao.php';
             $dao = new Dao();
             $user_id = $dao->saveUser($_POST['fname'], $_POST['lname'],
@@ -86,7 +84,6 @@
             // set session and redirect user to the profile page
             $_SESSION['user_id'] = $user_id;
             header("Location: https://michaelshippey.herokuapp.com/profile.php");
-            exit;
         }
     
 ?>

@@ -11,16 +11,15 @@ class Dao {
     public function getConnection () {
         try {
             $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username1, $this->password1);
-            echo "Connection Established"
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          } catch (PDOException $e) {
-          echo "Error: " . $e->getMessage();
-         }
-         return $connection;
+          die( $e->getMessage());
+        }
     }
 
     public function login($username){
       $conn = $this->getConnection();
-      $saveQuery = "SELECT * FROM users where username like '$username'";;
+      $saveQuery = "SELECT * FROM users where username like '$username'";
       if (mysql_num_rows($saveQuery) == 1) {
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":username", $username);

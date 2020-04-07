@@ -10,6 +10,7 @@ $password = $_POST['mypword'];
 include_once('header.php');
 ?>
         <div  id = "content">
+        <h2>Welcome Back!</h2> 
           <form id = "formbox">
             <h2>Username</h2> <input type="text" name = "myname"> </br>
             <h2>Password</h2> <input type="text" name = "mypword"><br /><br />

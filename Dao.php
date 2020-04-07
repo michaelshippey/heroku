@@ -49,7 +49,6 @@ class Dao {
         $q->bindParam(":email", $email);
         $q->bindParam(":password", $password);
         $q->execute();
-        return $conn->lastInsertId();
       }  catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
       }

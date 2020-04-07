@@ -43,23 +43,21 @@ class Dao {
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){
-      try {
+        $id ='';
         $this->logger->LogDebug("Saving a user [{$username}]");
         $conn = $this->getConnection();
-        $saveQuery ="INSERT INTO users(username,first_name,last_name,email,password
-				values(:username:firstname,:lastname,:email,:password)";
+        $saveQuery ="INSERT INTO users(id,username,first_name,last_name,email,password
+				VALUES(:id,:username:firstname,:lastname,:email,:password)";
 				
         
         $q = $conn->prepare($saveQuery);
+        $q->bindParam(":id", $id);
         $q->bindParam(":username", $username);
         $q->bindParam(":firstname", $firstname);
         $q->bindParam(":lastname", $lastname);
         $q->bindParam(":email", $email);
         $q->bindParam(":password", $password);
         $q->execute();
-      }  catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-      }
    
     }
 }

@@ -173,9 +173,14 @@ footer a {
 }
 
 #error {
-    margin: 10px 10px;
     background-color: red;
-    text-decoration: black;
-    font-size: 32px;
+    text-decoration: white;
+    font-size: 12px;
+}
+
+#success {
+    background-color: dodgerblue;
+    text-decoration: white;
+    font-size: 12px;
 }
 

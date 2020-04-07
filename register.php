@@ -1,5 +1,5 @@
 <?php 
- error_reporting(E_ALL);
+error_reporting(E_ALL);
 session_start();
 include("header.php"); 
 
@@ -35,6 +35,7 @@ include("header.php");
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>
+                        <div href ="login.php"> Already have an Account? </div>
 
                         <?php 
 
@@ -45,7 +46,7 @@ include("header.php");
                                  unset($_SESSION['errors']);
                             }
                             if (isset($_SESSION['success'])) {
-                                echo "<div id='error'>{$_SESSION['success']}</div>";
+                                echo "<div id='success'>{$_SESSION['success']}</div>";
                                 unset($_SESSION['success']);
                               }
                             

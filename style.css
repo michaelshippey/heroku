@@ -180,5 +180,9 @@ footer a {
 }
 
 .formbox {
-    display: center;
+    display: inline-block;
+}
+
+.footer {
+    display: flex;
 }

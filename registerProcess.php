@@ -78,12 +78,12 @@
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;
         }
+
+            unset($_SESSION)
             $dao->saveUser($_POST['fname'], $_POST['lname'],
             $_POST['email'], $_POST['username'], $_POST['password']);
-            // set session and redirect user to the profile page
-           // $_SESSION['user_id'] = $user_id;
-           // header("Location: https://michaelshippey.herokuapp.com/login.php")
+
+            header("Location: https://michaelshippey.herokuapp.com/register.php");
+            exit;
         
     }
-    
-?>

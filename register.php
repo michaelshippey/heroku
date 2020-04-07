@@ -37,10 +37,10 @@ include("header.php");
                             <input value = "<?php echo $firstname_preset; ?>"  type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
                             <input value = "<?php echo $lastname_preset; ?>"  type = "textbox" id ="lname" name ="lname" size = "25" placeholder="Last Name" /> <br /><br />
                             <input value = "<?php echo $email_preset; ?>"  type = "textbox" id ="email" name ="email" size = "25" placeholder="Email Address" /> <br /><br />
-                            <input value = "<?php echo $email2_preset; ?>"  type = "textbox" id ="email2" name ="email2" size = "25" placeholder="Email Address (confirm)" /> <br /><br />
+                            <input value = "<?php echo $email2_preset; ?>"  type = "textbox" id ="email2" name ="email2" size = "25" placeholder="Confirm Email" /> <br /><br />
                             <input value = "<?php echo $username_preset; ?>"  type = "textbox" id ="username" name ="username" size = "25" placeholder="Username" /> <br /><br />
                             <input value = "<?php echo $password_preset; ?>"  type = "password" id ="password" name ="password" size = "25" placeholder="Password" /> <br /><br />
-                            <input value = "<?php echo $password2_preset; ?>"  type = "password" id ="password2" name ="password2" size = "25" placeholder="Password (confirm)" /> <br /><br />
+                            <input value = "<?php echo $password2_preset; ?>"  type = "password" id ="password2" name ="password2" size = "25" placeholder="Confirm Password" /> <br /><br />
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>

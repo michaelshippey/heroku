@@ -1,14 +1,14 @@
 <?php
 session_start();
-try {
+$errors = array();
     require_once 'Dao.php';
     $dao = new Dao();
     
-    $errors = array();
+    
 
     // check for register new user request
     
-    if (isset($_POST['register'])) {
+  
     
         $firstname = trim($_POST['fname']);
         $lastname = trim($_POST['lname']);
@@ -86,7 +86,7 @@ try {
             $dao->saveUser($_POST['fname'], $_POST['lname'],
             $_POST['email'], $_POST['username'], $_POST['password']);
             $_SESSION['message'] = "New user registered successfully";
-            header("Location: https://michaelshippey.herokuapp.com/register.php");
+    
         
 
 } catch (PDOException $e) {

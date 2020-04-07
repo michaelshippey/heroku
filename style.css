@@ -173,7 +173,7 @@ footer a {
 }
 
 #error {
-    background-color: dodgerblue;
+    background-color: red;
     color: white;
     font-size: 12px;
 }

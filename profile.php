@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-// check user login
-if(!isset($_SESSION['user_id']) || !$_SESSION['user_id'])
-{
-    header("Location: register.php");
 
-}
 
 
 ?>

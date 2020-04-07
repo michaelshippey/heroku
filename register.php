@@ -13,6 +13,19 @@ include("header.php");
     $password_preset = "";
     $password2_preset = "";
 
+
+    
+    if (isset($_SESSION['form'])) {
+        $firstname_preset = $_SESSION['form']['fname'];
+        $lastname_preset = $_SESSION['form']['lname'];
+        $email_preset = $_SESSION['form']['email'];
+        $email2_preset = $_SESSION['form']['email2'];
+        $username_preset = $_SESSION['form']['username'];
+        $password_preset = $_SESSION['form']['password'];
+        $password2_preset = $_SESSION['form']['password2'];
+    }
+
+
 ?>
 
     <div  id = "content">
@@ -35,7 +48,7 @@ include("header.php");
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>
-                        <div href ="login.php"> Already have an Account? </div>
+                        <div id ="navBar"><a href = "login.php"> Already have an Account? </a> </div>
 
                         <?php 
 

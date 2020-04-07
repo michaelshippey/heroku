@@ -38,9 +38,9 @@ class Dao {
     public function saveUser($firstname, $lastname, $email, $username, $password){
       try {
         $conn = $this->getConnection();
-        $saveQuery = "INSERT INTO users (username, first_name, last_name, 
-        email, password) VALUES (:username, :first_name, :last_name, :email, 
-        :password)";
+        $saveQuery ="INSERT INTO users(username,first_name,last_name,email,password
+				values(:username:first_name,:last_name,:email,:password)
+				";
         
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":username", $username);

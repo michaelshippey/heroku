@@ -1,11 +1,12 @@
 <?php
-    session_start();
+    require_once 'Dao.php';
     
     $errors = array();
 
     // check for register new user request
-
-
+    $dao = new Dao();
+    $dao
+    if (isset($_POST['register'])) {
     
         $firstname = trim($_POST['fname']);
         $lastname = trim($_POST['lname']);
@@ -78,17 +79,13 @@
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;
         }
-
-            require_once 'Dao.php';
-            $dao = new Dao();
             $user_id = $dao->saveUser($_POST['fname'], $_POST['lname'],
             $_POST['email'], $_POST['username'], $_POST['password']);
             // set session and redirect user to the profile page
            // $_SESSION['user_id'] = $user_id;
            // header("Location: https://michaelshippey.herokuapp.com/login.php");
-           header("Location: https://michaelshippey.herokuapp.com/register.php");
            echo 'Register Success!';
         
-    
+    }
     
 ?>

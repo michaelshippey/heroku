@@ -46,8 +46,8 @@ class Dao {
         $id ='';
         $this->logger->LogDebug("Saving a user [{$username}]");
         $conn = $this->getConnection();
-        $saveQuery ="INSERT INTO users(id,username,first_name,last_name,email,password
-				VALUES(:id,:username:firstname,:lastname,:email,:password)";
+        $saveQuery ="INSERT INTO users
+				VALUES (:id,:username,:firstname,:lastname,:email,:password)";
 				
         
         $q = $conn->prepare($saveQuery);

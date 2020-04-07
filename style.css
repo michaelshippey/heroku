@@ -174,13 +174,13 @@ footer a {
 
 #error {
     background-color: red;
-    text-decoration: white;
+    color: white;
     font-size: 12px;
 }
 
 #success {
     background-color: dodgerblue;
-    text-decoration: white;
+    color: white;
     font-size: 12px;
 }
 

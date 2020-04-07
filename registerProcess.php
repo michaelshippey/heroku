@@ -36,11 +36,11 @@ $dao = new Dao();
             $errors[] = "Error, Invalid validation email address!";
         }
 
-        if($_POST['email'] == $_POST['email2']) {
+        if($_POST['email'] != $_POST['email2']) {
             $errors[] = "Error, emails do not match!";
         }
       
-        if($_POST['password'] == $_POST['password2']){
+        if($_POST['password'] != $_POST['password2']){
             $errors[] = "Error, passwords do not match!";
         }
       

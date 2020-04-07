@@ -12,14 +12,14 @@ include("header.php");
     $password_preset = "";
     $password2_preset = "";
     
-    if (isset($_SESSION['form'])) {
-        $firstname_preset = $_SESSION['form']['fname'];
-        $lastname_preset = $_SESSION['form']['lname'];
-        $email_preset = $_SESSION['form']['email'];
-        $email2_preset = $_SESSION['form']['email2'];
-        $username_preset = $_SESSION['form']['username'];
-        $password_preset = $_SESSION['form']['password'];
-        $password2_preset = $_SESSION['form']['password2'];
+    if (isset($_SESSION['register'])) {
+        $firstname_preset = $_SESSION['register']['fname'];
+        $lastname_preset = $_SESSION['register']['lname'];
+        $email_preset = $_SESSION['register']['email'];
+        $email2_preset = $_SESSION['register']['email2'];
+        $username_preset = $_SESSION['register']['username'];
+        $password_preset = $_SESSION['register']['password'];
+        $password2_preset = $_SESSION['register']['password2'];
     }
 ?>
 

@@ -5,7 +5,6 @@
 
     // check for register new user request
     $dao = new Dao();
-    $dao
     if (isset($_POST['register'])) {
     
         $firstname = trim($_POST['fname']);
@@ -79,7 +78,7 @@
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;
         }
-            $user_id = $dao->saveUser($_POST['fname'], $_POST['lname'],
+            $dao->saveUser($_POST['fname'], $_POST['lname'],
             $_POST['email'], $_POST['username'], $_POST['password']);
             // set session and redirect user to the profile page
            // $_SESSION['user_id'] = $user_id;

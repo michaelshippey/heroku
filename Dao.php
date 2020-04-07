@@ -16,7 +16,7 @@ class Dao {
 
     public function getConnection() {
       try {
-         $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username1, $this->password1);
+         $connection = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username1, $this->password1);
       } catch (Exception $e) {
         $this->logger->LogError("Couldn't connect to the database: " . $e->getMessage());
         return null;
@@ -62,9 +62,5 @@ class Dao {
       }
    
     }
-
-
-
-     // mysql://b517badf6a35ba:66daf5f2@us-cdbr-iron-east-04.cleardb.net/heroku_e5491682d442867?reconnect=true
 }
 ?>

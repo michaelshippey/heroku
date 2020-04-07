@@ -12,16 +12,7 @@ include("header.php");
     $username_preset = "";
     $password_preset = "";
     $password2_preset = "";
-    
-    if (isset($_SESSION['register'])) {
-        $firstname_preset = $_SESSION['register']['fname'];
-        $lastname_preset = $_SESSION['register']['lname'];
-        $email_preset = $_SESSION['register']['email'];
-        $email2_preset = $_SESSION['register']['email2'];
-        $username_preset = $_SESSION['register']['username'];
-        $password_preset = $_SESSION['register']['password'];
-        $password2_preset = $_SESSION['register']['password2'];
-    }
+
 ?>
 
     <div  id = "content">

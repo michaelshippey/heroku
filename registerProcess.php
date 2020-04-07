@@ -82,8 +82,7 @@
             $_POST['email'], $_POST['username'], $_POST['password']);
             // set session and redirect user to the profile page
            // $_SESSION['user_id'] = $user_id;
-           // header("Location: https://michaelshippey.herokuapp.com/login.php");
-           echo 'Register Success!';
+           // header("Location: https://michaelshippey.herokuapp.com/login.php")
         
     }
     

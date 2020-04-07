@@ -1,10 +1,13 @@
 <?php
+session_start();
+try {
     require_once 'Dao.php';
+    $dao = new Dao();
     
     $errors = array();
 
     // check for register new user request
-    $dao = new Dao();
+    
     if (isset($_POST['register'])) {
     
         $firstname = trim($_POST['fname']);
@@ -21,69 +24,71 @@
             $errors[] = "Error, alpha characters only in the username.";
         }
       
-        else if(!ctype_alpha($firstname)) {
+        if(!ctype_alpha($firstname)) {
             $errors[] = "Error, alpha characters only in the first name.";
         }
       
-        else if(!ctype_alpha($lastname)) {
+        if(!ctype_alpha($lastname)) {
             $errors[] = "Error, alpha characters only in the last name.";
         }
       
       
           
-        else if (!preg_match("/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/",$email)) {
+        if (!preg_match("/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/",$_POST['email'])) {
             $errors[] = "Error, Invalid email address!";
         }
       
-        else if (!preg_match("/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/",$email2)) {
+        if (!preg_match("/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/",$_POST['email2'])) {
             $errors[] = "Error, Invalid validation email address!";
         }
 
-        else if($email != $email2){
+        if($_POST['email'] == $_POST['email2']) {
             $errors[] = "Error, emails do not match!";
         }
       
-        else if($password != $password2){
+        if($_POST['password'] == $_POST['password2']){
             $errors[] = "Error, passwords do not match!";
         }
       
       
-        else if (strlen($_POST['fname']) ==  0) {
+        if (strlen($_POST['fname']) ==  0) {
             $errors[] = "Error, First Name cannot be blank.";
         }
 
-        else if (strlen($_POST['lname']) ==  0) {
+        if (strlen($_POST['lname']) ==  0) {
             $errors[] = "Error, Last Name cannot be blank.";
         }
 
-        else if (strlen($_POST['email']) ==  0) {
+        if (strlen($_POST['email']) ==  0) {
             $errors[] = "Error, Email cannot be blank.";
         }
 
-        else if (strlen($_POST['email2']) ==  0) {
+        if (strlen($_POST['email2']) ==  0) {
             $errors[] = "Error, Email validation cannot be blank.";
         }
-        else if (strlen($_POST['username']) ==  0) {
+        if (strlen($_POST['username']) ==  0) {
             $errors[] = "Error, Username cannot be blank.";
         }
-        else if (strlen($_POST['password']) ==  0) {
+        if (strlen($_POST['password']) ==  0) {
             $errors[] = "Error, Password cannot be blank.";
         }
-        else if (strlen($_POST['password2']) ==  0) {
+        if (strlen($_POST['password2']) ==  0) {
             $errors[] = "Error, Password validation cannot be blank.";
         }
       
-        else if (0 < count($errors)) {
+        if (0 < count($errors)) {
+            $_SESSION['form'] = $_POST;
             $_SESSION['errors'] = $errors;
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;
         }
-
-            unset($_SESSION)
+            unset($_SESSION['form']);
             $dao->saveUser($_POST['fname'], $_POST['lname'],
             $_POST['email'], $_POST['username'], $_POST['password']);
-
+            $_SESSION['message'] = "New user registered successfully";
             header("Location: https://michaelshippey.herokuapp.com/register.php");
-            exit;
         
-    }
+
+} catch (PDOException $e) {
+	echo "Error: ". $e -> getMessage();
+}

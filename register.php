@@ -53,6 +53,10 @@ include("header.php");
                                  }
                                  unset($_SESSION['errors']);
                             }
+                            if (isset($_SESSION['success'])) {
+                                echo "<div id='error'>{$_SESSION['success']}</div>";
+                                unset($_SESSION['success']);
+                              }
                             
                         ?>
                     </td>

@@ -1,8 +1,7 @@
 <?php
 session_start();
 $errors = array();
-require_once 'Dao.php';
-$dao = new Dao();
+
 
         $firstname = $_POST['fname'];
         $lastname = $_POST['lname'];
@@ -76,9 +75,11 @@ $dao = new Dao();
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;
         }
+            require_once 'Dao.php';
+            $dao = new Dao();
             unset($_SESSION['form']);
             $dao->saveUser($_POST['fname'], $_POST['lname'],
             $_POST['email'], $_POST['username'], $_POST['password']);
-            $_SESSION['message'] = "New user registered successfully";
+            $_SESSION['success'] = "New user registered successfully";
             header("Location: https://michaelshippey.herokuapp.com/register.php");
-    
+            exit;

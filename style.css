@@ -172,7 +172,7 @@ footer a {
     background-color: antiquewhite;
 }
 
-.error {
+#error {
     margin: 10px 10px;
     background-color: red;
     text-decoration: black;

@@ -34,13 +34,11 @@
     
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
     height: auto;
     width: 1000px;
-    padding: 40px;
-    border-left: 1px solid #dec5ee;
-    border-right: 1px solid #dec5ee;
-    padding-bottom: 1000px;
+    padding-top: 40px;
+    margin-top: 40px;
+    padding-bottom: 500px;
 }
 .logo {
     background-image: url(menu.png);

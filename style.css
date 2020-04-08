@@ -249,3 +249,7 @@ footer a {
     background-image: url(menu_back_drop.png);
     text-decoration: underline;
 }
+.postSubmit {
+    background-color: #dec5ee;
+    float: right;
+}

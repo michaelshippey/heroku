@@ -52,8 +52,6 @@ class Dao {
         $conn = $this->getConnection();
         $saveQuery ="INSERT INTO users
 				VALUES (:id,:username,:firstname,:lastname,:email,:password)";
-				
-        
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":id", $id);
         $q->bindParam(":username", $username);
@@ -62,7 +60,31 @@ class Dao {
         $q->bindParam(":email", $email);
         $q->bindParam(":password", $password);
         $q->execute();
-   
     }
+
+  public function savePost($username, $comment){
+    $now ="NOW()"
+    $this->logger->LogDebug("Saving a post [{$comment}]");
+    $conn = $this->getConnection();
+    $saveQuery = "INSERT INTO posts VALUES (:username, :comment, :now)"
+    $qResult = $conn->prepare($saveQuery);
+    $qResult->bindParam(":username", $username);
+    $qResult->bindParam(":comment", $comment);
+    $qResult->bindParam(":now", $now);
+    $qResult->execute();
+  }
+
+  public function getPosts() {
+    $conn = $this->getConnection();
+    if(is_null($conn)) {
+      return;
+    }
+    try {
+      return $conn->query("select username, comment, date_entered from posts order by date_entered desc", PDO::FETCH_ASSOC);
+    } catch(Exception $e) {
+      echo print_r($e,1);
+      exit;
+    }
+  }
 }
 ?>

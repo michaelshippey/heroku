@@ -14,10 +14,17 @@ include_once('header.php');
         <div  id = "content">
         <h2>Welcome!</h2> 
           <form id = "formbox" action = "loginHandler.php" method ="POST">
-            <h2>Username</h2> <input type="text" name = "myname"> </br>
-            <h2>Password</h2> <input type="password" name = "mypword"><br /><br />
+            <h2>Username</h2> <input value ="<?php echo $username1_preset; ?>" type="textbox" name = "myname"> </br>
+            <h2>Password</h2> <input value ="<?php echo $password1_preset; ?>" type="password" name = "mypword"><br /><br />
             <input type = "submit" name = "submit" value = "Login"><br /><br />
             <a href = "register.php"> Don't have an Account? </a>
+            <?php
+              if (isset($_SESSION['loginError'])) {
+                echo "<div id='error'>{$_SESSION['loginError']}</div>";
+                unset($_SESSION['loginError']);
+              }
+            ?>
+
           </form>
         </div>
 

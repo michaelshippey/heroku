@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(empty($_SESSION['username']))
-{
-    header("Location: https://michaelshippey.herokuapp.com/register.php");
+if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
+	header("Location: https://michaelshippey.herokuapp.com/login.php");
+    exit;
 }
 include_once('header.php');
 

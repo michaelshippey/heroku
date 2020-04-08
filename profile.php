@@ -15,7 +15,7 @@ include_once('header.php');
     <br />
     <div class = "textHeader"><? echo $_SESSION['username']; ?>'s Profile</div>
     <div class = "profileLeftContent"><? echo $_SESSION['username']; ?>'s Content ...</div>
-    <div  id = "wrapper"> </div>
+   
 
 
 

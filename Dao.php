@@ -27,8 +27,9 @@ class Dao {
     public function login($username , $password){
       $conn = $this->getConnection();
       $saveQuery = "SELECT*FROM users where username='$username' and password='$password'";
-      $qResult = $conn->query($saveQuery);
-      $count = count($qResult->fetchAll());
+      $qResult = $conn->prepare($saveQuery);
+      $qResult->execute();
+      $count = $qResult->rowCount();
       return $count;
     }
     

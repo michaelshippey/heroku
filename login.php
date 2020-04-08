@@ -6,8 +6,8 @@ include_once('header.php');
     $password1_preset = "";
 
     if (isset($_SESSION['userForm'])) {
-        $username1_preset = $_SESSION['form']['username'];
-        $password1_preset = $_SESSION['form']['password'];
+        $username1_preset = $_SESSION['userForm']['username'];
+        $password1_preset = $_SESSION['userForm']['password'];
     }
 
 ?>
@@ -18,24 +18,24 @@ include_once('header.php');
             <h2>Password</h2> <input value ="<?php echo $password1_preset; ?>" type="password" name = "mypword"><br /><br />
             <input type = "submit" name = "submit" value = "Login"><br /><br />
             <a href = "register.php"> Don't have an Account? </a>
-            <?php
+          
+
+          </form>
+        </div>
+        <?php
               if (isset($_SESSION['loginError'])) {
                 echo "<div id='error'>{$_SESSION['loginError']}</div>";
                 unset($_SESSION['loginError']);
               }
-            ?>
-
-          </form>
-        </div>
+              if (isset($_SESSION['errors1'])) {
+                foreach ($_SESSION['errors1'] as $errors1) {
+                    echo "<div id='error'>{$errors1}</div>";
+                }
+                unset($_SESSION['errors1']);
+            }
+        ?>
 
 <?php 
-
-  if (isset($_SESSION['errors1'])) {
-      foreach ($_SESSION['errors1'] as $errors1) {
-          echo "<div id='error'>{$errors1}</div>";
-      }
-      unset($_SESSION['errors1']);
-  }
 
   include_once('footer.php');
 ?>

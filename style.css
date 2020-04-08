@@ -39,6 +39,7 @@
     padding: 40px;
     border-left: 1px solid #dec5ee;
     border-right: 1px solid #dec5ee;
+    padding-bottom: 10px;
 }
 .logo {
     background-image: url(menu.png);

@@ -9,10 +9,10 @@
                     <a href = "register.php"> <img src = "logo.png"/> </a>
                 </div>
                 <div id="navBar">
-                    <a href ="register.php"> Home </a>
+                    <a href ="profile.php"> Home </a>
                     <a href ="profile.php"> Profile </a>
                     <a href ="register.php"> Sign Up</a>
-                    <a href ="login.php"> Sign In </a>
+                    <a href ="logout.php"> Log out </a>
                 </div>
             </div>
         </div>

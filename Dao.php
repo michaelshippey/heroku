@@ -26,11 +26,22 @@ class Dao {
 
     public function login($username , $password){
       $conn = $this->getConnection();
-      $saveQuery = "SELECT*FROM users where username='$username' and password='$password'";
+      $saveQuery = "SELECT*FROM users where username=':username' and password=':password'";
       $qResult = $conn->prepare($saveQuery);
+      $qResult->bindParam(":username", $username);
+      $qResult->bindParam(":password", $password);
       $qResult->execute();
-      $count = $qResult->rowCount();
-      return $count;
+      if($qResult->rowCount() > 0){
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['auth'] = true;
+        header("Location: https://michaelshippey.herokuapp.com/profile.php");
+        exit;
+      }else{
+        $_SESSION['auth'] = false;
+        $_SESSION['loginError'] = "Invalid Username or Password.";
+        header("Location: https://michaelshippey.herokuapp.com/login.php");
+      }
+      
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){

@@ -24,20 +24,6 @@ $errors1 = array();
             require_once 'Dao.php';
             $dao = new Dao();
             unset($_SESSION['userForm']);
-            if(($dao->login($_POST['username'], $_POST['password'])) == 1){
-                $_SESSION['username'] = $_POST['username'];
-                $_SESSION['auth'] = true;
-                header("Location: https://michaelshippey.herokuapp.com/profile.php");
-                exit;
-            }
-            else{
-                
-                $_SESSION['auth'] = false;
-                $_SESSION['loginError'] = "Invalid Username or Password.";
-                header("Location: https://michaelshippey.herokuapp.com/login.php");
-            }
-      
-
-
+            $dao->login($_POST['username'], $_POST['password']);
 
 ?>

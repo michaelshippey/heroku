@@ -7,10 +7,14 @@ if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
 include_once('header.php');
 
 ?>
+    <div  id = "content">
+    <h1> Welcome <?php echo $_SESSION['username']; ?>   </h1>
+
+              
+    </div>
 
 
 
-<h1> Welcome <?php echo $_SESSION['username']; ?>   </h1>
 
 
 <?php 

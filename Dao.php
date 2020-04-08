@@ -33,6 +33,7 @@ class Dao {
       $qResult->bindParam(":password", $password);
       $qResult->execute();
       if($qResult->rowCount() > 0){
+        unset($_SESSION['userForm']);
         $_SESSION['username'] = $_POST['myname'];
         $_SESSION['auth'] = true;
         header("Location: https://michaelshippey.herokuapp.com/profile.php");

@@ -249,7 +249,9 @@ footer a {
 
 .logout {
     background-image: url(menu.png);
+    position: absolute;
     color: white;
+    text-decoration: none;
 }
 
 .logout:hover {

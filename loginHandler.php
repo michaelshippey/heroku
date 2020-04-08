@@ -4,7 +4,7 @@ session_start();
 $errors1 = array();
 
         $username1 = $_POST['myname'];
-        $password1 = $_POST['mypword'];
+        $password = $_POST['mypword'];
 
 
         if (strlen($_POST['myname']) ==  0) {
@@ -24,7 +24,7 @@ $errors1 = array();
             require_once 'Dao.php';
             $dao = new Dao();
             unset($_SESSION['userForm']);
-            if(($dao->userExists($_POST['username'], $_POST['password']) == 1){
+            if(($dao->login($_POST['username'], $_POST['password']) == 1){
                 $_SESSION['username']=$_POST['username'];
                 $_SESSION['auth'] = true;
                 header("Location: https://michaelshippey.herokuapp.com/profile.php");

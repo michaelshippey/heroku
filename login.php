@@ -17,9 +17,9 @@ include_once('header.php');
             <h2>Username</h2> <input type="text" name = "myname"> </br>
             <h2>Password</h2> <input type="text" name = "mypword"><br /><br />
             <input type = "submit" name = "submit" value = "Login"><br /><br />
+            <a href = "register.php"> Don't have an Account? </a>
           </form>
         </div>
-        <div><a href = "register.php"> Don't have an Account? </a> </div>
 
 <?php 
 

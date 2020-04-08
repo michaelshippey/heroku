@@ -15,6 +15,8 @@ if (isset($_SESSION['postForm'])) {
     $post_preset = $_SESSION['postForm']['send'];
 }
 
+require_once 'Dao.php';
+$dao = new Dao();
 ?>
    
     

@@ -3,11 +3,11 @@
   $errors2 = array();
   $comment = $_POST['post'];
 
-    if (strlen($_POST['send']) ==  0) {
+    if (strlen($_POST['post']) ==  0) {
         $errors2[] = "Error, Posts cannot be blank.";
     }
 
-    if (strlen($_POST['send']) > 0) {
+    if (strlen($_POST['post']) > 0) {
         $errors2[] = "Error, Posts cannot be longer than 256 characters.";
     }
 

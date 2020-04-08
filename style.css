@@ -32,13 +32,10 @@
 }
 #wrapper2 {
     
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
+    
     width: 1000px;
-    padding-top: 40px;
-    margin-top: 40px;
-    padding-bottom: 500px;
+    padding-top: 60px;
+    margin-top: 60px;
 }
 .logo {
     background-image: url(menu.png);

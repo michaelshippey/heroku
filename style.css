@@ -27,7 +27,7 @@
     height: auto;
     width: 1000px;
     padding-top: 40px;
-    padding-bottom: 10px;
+    padding-bottom: 500px;
    
 }
 #wrapper2 {
@@ -39,7 +39,7 @@
     padding: 40px;
     border-left: 1px solid #dec5ee;
     border-right: 1px solid #dec5ee;
-    padding-bottom: 10px;
+    padding-bottom: 1000px;
 }
 .logo {
     background-image: url(menu.png);

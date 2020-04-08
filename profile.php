@@ -10,6 +10,10 @@ include_once('profileHeader.php');
    
     
     <div class = "postForm"> Post form here ... </div>
+        <form action = "postHandler.php" method = "post">
+        <textarea id="post" name="post" rows="4" cols="58"></textarea>
+        <input class = "postSubmit" type="submit" name="send" value="Post Here">
+        </form>
     <div class = "profilePosts"> Your Posts here ... </div>
     <img src="profile_Picture.png" height = "250" width = "200" alt="<?php echo $_SESSION['username']; ?>'s Profile:" title="<?php echo $_SESSION['username']; ?>'s Profile" />
     <br />

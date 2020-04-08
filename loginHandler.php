@@ -19,7 +19,7 @@ $errors1 = array();
        
             require_once 'Dao.php';
             $dao = new Dao();
-            unset($_SESSION['userForm']);
+            
             $dao->login($_POST['myname'], $_POST['mypword']);
 
 ?>

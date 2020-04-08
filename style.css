@@ -24,6 +24,7 @@
     background-image: url(menu.png);
     margin-left: auto;
     margin-right: auto;
+    height: auto;
     width: 1000px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -192,4 +193,55 @@ footer a {
     padding-top: 40px;
     text-decoration-color: #0084c6;
     text-align: center;
+}
+#logout {
+    float: right;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 12px;
+}
+
+.textHeader {
+    background-color: #f3f6f9;
+    width: 190px;
+    height: 15px;
+    padding: 5px;
+    border-bottom: 1px solid #dce5ee;
+    font-weight: 600;
+
+}
+
+.profileLeftContent{
+    width: 194px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 0px;
+    height: 200px;
+}
+
+.postForm {
+    float: right;
+    width: 560px;
+    height: 80px;
+    background-color: #f3f6f9;
+    padding: 5px;
+}
+
+.profilePosts {
+    float: right;
+    width: 580px;
+    height:414px;
+    background-color: #dce5ee;
+    padding: 5px;
+}
+
+.logout {
+    background-image: url(menu.png);
+    color: white;
+}
+
+.logout:hover {
+    background-image: url(menu_back_drop.png);
+    text-decoration: underline;
 }

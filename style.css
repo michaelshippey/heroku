@@ -32,7 +32,7 @@
 }
 #wrapper2 {
     
-    
+    background-image: url(menu.png);
     width: 1000px;
     padding-top: 60px;
     margin-top: 60px;
@@ -224,7 +224,7 @@ footer a {
 
 .postForm {
     float: right;
-    width: 560px;
+    width: 580px;
     height: 80px;
     background-color: #f3f6f9;
     padding: 5px;

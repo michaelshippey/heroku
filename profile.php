@@ -8,7 +8,7 @@ include_once('profileHeader.php');
 
 ?>
    
-    <div id = "content">
+    
     <div class = "postForm"> Post form here ... </div>
     <div class = "profilePosts"> Your Posts here ... </div>
     <img src="" height = "250" width = "200" alt="<?php echo $_SESSION['username']; ?>'s Profile:" title="<?php echo $_SESSION['username']; ?>'s Profile" />

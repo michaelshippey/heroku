@@ -4,6 +4,7 @@ if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
 	header("Location: https://michaelshippey.herokuapp.com/login.php");
     exit;
 }
+
 include_once('profileHeader.php');
 
 
@@ -55,7 +56,6 @@ if (isset($_SESSION['postForm'])) {
     <br />
     <div class = "textHeader"><? echo $_SESSION['username']; ?>'s Profile</div>
 
-</div>
 
 <?php 
 include_once('footer.php');

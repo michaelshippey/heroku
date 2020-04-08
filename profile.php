@@ -4,7 +4,7 @@ if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
 	header("Location: https://michaelshippey.herokuapp.com/login.php");
     exit;
 }
-include_once('header.php');
+include_once('profileHeader.php');
 
 ?>
    

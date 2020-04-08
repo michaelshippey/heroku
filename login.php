@@ -12,7 +12,6 @@ include_once('header.php');
 
 ?>
         <div  id = "content">
-        <h2>Welcome!</h2> 
           <form id = "formbox" action = "loginHandler.php" method ="POST">
             <h2>Username</h2> <input value ="<?php echo $username1_preset; ?>" type="textbox" name = "myname"> </br>
             <h2>Password</h2> <input value ="<?php echo $password1_preset; ?>" type="password" name = "mypword"><br /><br />
@@ -20,12 +19,12 @@ include_once('header.php');
             <a href = "register.php"> Don't have an Account? </a>
             <?php
               if (isset($_SESSION['loginError'])) {
-                echo "<div id='error'>{$_SESSION['loginError']}</div>";
+                echo "<h2 id='error'>{$_SESSION['loginError']}</h2>";
                 unset($_SESSION['loginError']);
               }
               if (isset($_SESSION['errors1'])) {
                 foreach ($_SESSION['errors1'] as $errors1) {
-                    echo "<div id='error'>{$errors1}</div>";
+                    echo "<h2 id='error'>{$errors1}</h2>";
                 }
                 unset($_SESSION['errors1']);
             }

@@ -2,12 +2,12 @@
 error_reporting(E_ALL);
 session_start();
 include_once('header.php');
-    $username_preset = "";
-    $password_preset = "";
+    $username1_preset = "";
+    $password1_preset = "";
 
     if (isset($_SESSION['userForm'])) {
-        $username_preset = $_SESSION['form']['username'];
-        $password_preset = $_SESSION['form']['password'];
+        $username1_preset = $_SESSION['form']['username'];
+        $password1_preset = $_SESSION['form']['password'];
     }
 
 ?>

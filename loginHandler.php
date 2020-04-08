@@ -1,9 +1,10 @@
 <?php
 session_start();
+
 $errors1 = array();
 
-        $username = $_POST['myname'];
-        $password = $_POST['mypword'];
+        $username1 = $_POST['myname'];
+        $password1 = $_POST['mypword'];
 
 
         if (strlen($_POST['myname']) ==  0) {

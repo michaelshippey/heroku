@@ -48,7 +48,7 @@ include("header.php");
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>
-                        <div id ="navBar"><a href = "login.php"> Already have an Account? </a> </div>
+                        <div><a href = "login.php"> Already have an Account? </a> </div>
 
                         <?php 
 

@@ -24,22 +24,12 @@ class Dao {
       return $connection;
     }
 
-    public function login($username){
+    public function login($username , $password){
       $conn = $this->getConnection();
-      $saveQuery = "SELECT * FROM users where username like '$username'";
-      if (mysql_num_rows($saveQuery) == 1) {
-        $q = $conn->prepare($saveQuery);
-        $q->bindParam(":username", $username);
-        $_SESSION['auth'] = true;
-        echo "Username already exists";
-    
-        exit;
-      }
-      else{
-        $_SESSION['auth'] = false;
-        $_SESSION['message'] = "Invalid username or password";
-      }
-
+      $saveQuery = "SELECT*FROM users where username='$username' and password='$password'";
+      $qResult = $conn->query($saveQuery);
+      $count = count($qResult->fetchAll());
+      return $count;
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){

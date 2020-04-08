@@ -1,15 +1,17 @@
 <?php 
+error_reporting(E_ALL);
 session_start();
-
-$username = $_POST['myname'];
-$password = $_POST['mypword'];
-
-
-?>
-<?php 
 include_once('header.php');
+    $username_preset = "";
+    $password_preset = "";
+
+    if (isset($_SESSION['userForm'])) {
+        $username_preset = $_SESSION['form']['username'];
+        $password_preset = $_SESSION['form']['password'];
+    }
+
 ?>
-         <div  id = "content">
+        <div  id = "content">
         <h2>Welcome!</h2> 
           <form id = "formbox" action = "loginHandler.php" method ="POST">
             <h2>Username</h2> <input type="text" name = "myname"> </br>
@@ -17,7 +19,16 @@ include_once('header.php');
             <input type = "submit" name = "submit" value = "Login"><br /><br />
           </form>
         </div>
+        <div><a href = "register.php"> Don't have an Account? </a> </div>
 
 <?php 
-include_once('footer.php');
+
+  if (isset($_SESSION['errors1'])) {
+      foreach ($_SESSION['errors1'] as $errors1) {
+          echo "<div id='error'>{$errors1}</div>";
+      }
+      unset($_SESSION['errors1']);
+  }
+
+  include_once('footer.php');
 ?>

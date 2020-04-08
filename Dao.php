@@ -25,14 +25,15 @@ class Dao {
     }
 
     public function login($username , $password){
+      $this->logger->LogDebug("Logging in user [{$username}]");
       $conn = $this->getConnection();
-      $saveQuery = "SELECT*FROM users where username=':username' and password=':password'";
+      $saveQuery = "SELECT*FROM users where username=:username and password=:password";
       $qResult = $conn->prepare($saveQuery);
       $qResult->bindParam(":username", $username);
       $qResult->bindParam(":password", $password);
       $qResult->execute();
       if($qResult->rowCount() > 0){
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['username'] = $_POST['myname'];
         $_SESSION['auth'] = true;
         header("Location: https://michaelshippey.herokuapp.com/profile.php");
         exit;

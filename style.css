@@ -235,7 +235,7 @@ footer a {
     float: right;
     width: 600px;
     height:414px;
-    
+    margin: auto;
     background-color: #dce5ee;
     padding: 2px;
 }

@@ -51,7 +51,7 @@ if (isset($_SESSION['postForm'])) {
     <?php
          $lines = $dao->getPosts($_SESSION['username']);
          while($line = $lines->fetch()) {
-            echo"<li> {$line['username']} </li>";
+            echo sprintf('<li> %s </li>' ,$line['username']);
          }
     ?>
          

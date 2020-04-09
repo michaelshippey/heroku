@@ -14,8 +14,8 @@ $dao = new Dao();
 $post_preset = "";
 
 
-if (isset($_SESSION['postForm1'])) {
-    $post_preset = $_SESSION['postForm1']['posted'];
+if (isset($_SESSION['postForm'])) {
+    $post_preset = $_SESSION['postForm']['posted'];
 }
 
 
@@ -40,7 +40,7 @@ if (isset($_SESSION['postForm1'])) {
           }
       }
       sleep(2);
-      ?>
+    ?>
 
     </div>
     <img src="profile_Picture.png" height = "250" width = "200" alt="<?php echo $_SESSION['username']; ?>'s Profile:" title="<?php echo $_SESSION['username']; ?>'s Profile" />

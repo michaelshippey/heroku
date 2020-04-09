@@ -19,7 +19,6 @@ $errors1 = array();
        
             require_once 'Dao.php';
             $dao = new Dao();
-            
             $dao->login($_POST['myname'], $_POST['mypword']);
 
 ?>

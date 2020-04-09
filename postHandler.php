@@ -1,4 +1,5 @@
 <?php
+
   session_start();
   $errors2 = array();
   $comment = $_POST['post'];
@@ -20,8 +21,10 @@
 
     require_once 'Dao.php';
     $dao = new Dao();
-    $dao->savePost($_SESSION['username'],$_POST['post']);
-    unset($_SESSION['postForm1']);
+    $dao->savePost($_SESSION['username'], $comment);
+    unset($_SESSION['postForm']);
     $_SESSION['successPost'] = "Post saved successfully";
     header("Location: https://michaelshippey.herokuapp.com/profile.php");
     exit;
+
+    ?>

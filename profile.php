@@ -23,23 +23,25 @@ if (isset($_SESSION['postForm'])) {
     
     <div class = "postForm"> Create a Post below!
         <form action = "postHandler.php" method = "POST">
+            <?php 
+
+                if (isset($_SESSION['errors2'])) {
+                    foreach ($_SESSION['errors2'] as $errors2) {
+                        echo "<div id='error'>{$errors2}</div>";
+                    }
+                    unset($_SESSION['errors2']);
+                }
+                if (isset($_SESSION['successPost'])) {
+                    echo "<div id='success'>{$_SESSION['successPost']}</div>";
+                    unset($_SESSION['successPost']);
+                }
+
+            ?>
+
             <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" /> </br>
             <input type="submit" value="Post"/>
         </form>
-        <?php 
-
-            if (isset($_SESSION['errors2'])) {
-                foreach ($_SESSION['errors2'] as $errors2) {
-                    echo "<div id='error'>{$errors2}</div>";
-                }
-                unset($_SESSION['errors2']);
-            }
-            if (isset($_SESSION['successPost'])) {
-                echo "<div id='success'>{$_SESSION['successPost']}</div>";
-                unset($_SESSION['successPost']);
-            }
-
-        ?>
+       
    
     </div>
     <div class = "profilePosts"> View Your Posts Here!
@@ -50,7 +52,9 @@ if (isset($_SESSION['postForm'])) {
             echo "There was an error.";
         } else {
             foreach ($lines as $line) {
-            echo "<div class='userPost'> { $line['username']} {$line['content']}  {$line['date_entered']} </div>" ;
+            echo "<div class='userPost'>" . $line['username'] . "</div>" ;
+            echo "<div class='userPost'>" . $line['content'] . "</div>" ;
+            echo "<div class='userPost'>" . $line['date_entered'] . "</div>" ;
         }
       }
       sleep(2);

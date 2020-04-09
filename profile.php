@@ -15,7 +15,7 @@ $post_preset = "";
 
 
 if (isset($_SESSION['postForm1'])) {
-    $post_preset = $_SESSION['postForm1']['post'];
+    $post_preset = $_SESSION['postForm1']['posted'];
 }
 
 
@@ -24,7 +24,7 @@ if (isset($_SESSION['postForm1'])) {
     
     <div class = "postForm"> Post form here ... 
         <form action = "postHandler.php" method = "post">
-        <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="post" > </br>
+        <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" > </br>
         <input  type="submit" name="sendPost"  id = "sendPost" value="Post Here">
         </form>
    

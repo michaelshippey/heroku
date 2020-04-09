@@ -63,7 +63,7 @@ class Dao {
     }
 
   public function savePost($username, $comment){
-    $now ="NOW()"
+    $now ="NOW()";
     $this->logger->LogDebug("Saving a post [{$comment}]");
     $conn = $this->getConnection();
     $saveQuery = "INSERT INTO posts VALUES (:username, :comment, :now)"
@@ -80,11 +80,12 @@ class Dao {
       return;
     }
     try {
-     return $conn->query("SELECT*FROM posts where username=:username order by date_entered desc");
+     return $conn->query("SELECT * FROM posts where username=$username order by date_entered desc", PDO::FETCH_ASSOC);
     } catch(Exception $e) {
       echo print_r($e,1);
       exit;
     }
   }
+
 }
 ?>

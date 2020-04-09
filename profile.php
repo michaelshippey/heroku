@@ -50,10 +50,11 @@ if (isset($_SESSION['postForm'])) {
     <ul>
     <?php
          $lines = $dao->getPosts();
+         foreach($lines as $line) {
+            echo"<li> {$line['username']} </li>"
+         }
     ?>
-         <?php foreach($lines as $line): ?>
-         <li><?=$line['username']?> </li>
-         <?php endforeach ?>
+         
     </ul>
     
     </div>

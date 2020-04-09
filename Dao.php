@@ -74,17 +74,18 @@ class Dao {
     $qResult->execute();
   }
 
-  public function getPosts() {
+  public function getPosts($username) {
     $conn = $this->getConnection();
     if(is_null($conn)) {
       return;
     }
     try {
-     $qResult = $conn->prepare("SELECT * FROM posts where username like ? order by date_entered desc");
-     $qResult->execute($_SESSION['username']);
-     $data = $qResult->fetchAll(PDO::FETCH_ASSOC);
-     return $data;
-
+    $saveQuery = "SELECT * FROM posts where username=:username order by date_entered desc";
+    $stmt = $conn->prepare($saveQuery);
+    $stmt->bindParam(':username', $username,PDO::PARAM_STR);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
     } catch(Exception $e) {
       echo print_r($e,1);
       exit;

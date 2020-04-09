@@ -2,13 +2,13 @@
 
   session_start();
   $errors2 = array();
-  $comment = $_POST['post'];
+  $comment = $_POST['posted'];
 
-    if (strlen($_POST['post']) ==  0) {
+    if (strlen($_POST['posted']) ==  0) {
         $errors2[] = "Error, Posts cannot be blank.";
     }
 
-    if (strlen($_POST['post']) > 256) {
+    if (strlen($_POST['posted']) > 256) {
         $errors2[] = "Error, Posts cannot be longer than 256 characters.";
     }
 

@@ -24,8 +24,8 @@ if (isset($_SESSION['postForm1'])) {
     
     <div class = "postForm"> Post form here ... 
         <form action = "postHandler.php" method = "post">
-        <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" > </br>
-        <input  type="submit" name="sendPost"  id = "sendPost" value="Post Here">
+            <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" > </br>
+            <input  type="submit" value="Post">
         </form>
    
     </div>
@@ -36,7 +36,7 @@ if (isset($_SESSION['postForm1'])) {
                     echo "There was an error.";
             } else {
          foreach ($lines as $line) {
-           echo "<div> " $line['content'] " </div>";
+           echo "<div> $line['content'] </div>";
           }
       }
       sleep(2);

@@ -13,7 +13,7 @@ $post_preset = "";
 
 
 if (isset($_SESSION['postForm'])) {
-    $post_preset = $_SESSION['postForm']['send'];
+    $post_preset = $_SESSION['postForm']['post'];
 }
 
 require_once 'Dao.php';

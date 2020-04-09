@@ -53,9 +53,7 @@ if (isset($_SESSION['postForm'])) {
          $lines = $dao->getPosts($_SESSION['username']);
          while($line = $lines->fetch(PDO::FETCH_ASSOC)) {
             extract($line);
-            echo sprintf('<li> Posted by: %s </li> </br>' ,$username);
-            echo sprintf('<li> Post Content: %s </li>' ,$content);
-            echo sprintf('<li> Posted at: %s </li>' ,$date_entered);
+            echo sprintf('<li> Posted by: %s </br> Post Content: %s </br> Posted at: %s </br> </li> ' , $username, $content, $date_entered);
          }
     ?>
          

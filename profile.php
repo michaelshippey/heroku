@@ -43,21 +43,20 @@ if (isset($_SESSION['postForm'])) {
    
     </div>
     <div class = "profilePosts"> View Your Posts Here!
+
     <?php
         $lines = $dao->getPosts($_SESSION['username']);
         if (is_null($lines)) {
             echo "There was an error.";
         } else {
             foreach ($lines as $line) {
-            echo "<div class='userPost'>" . $line['username'] . "</div>" ;
-            echo "<div class='userPost'>" . $line['content'] . "</div>" ;
-            echo "<div class='userPost'>" . $line['date_entered'] . "</div>" ;
+            echo "<div class='userPost'> { $line['username']} {$line['content']}  {$line['date_entered']} </div>" ;
         }
       }
       sleep(2);
-      ?>
-
+    ?>
     </div>
+
     <img src="profile_Picture.png" height = "250" width = "200" alt="<?php echo $_SESSION['username']; ?>'s Profile:" title="<?php echo $_SESSION['username']; ?>'s Profile" />
     <br />
     <div class = "textHeader"><? echo $_SESSION['username']; ?>'s Profile</div>

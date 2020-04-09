@@ -6,7 +6,7 @@ if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
     exit;
 }
 
-include_once('profileHeader.php');
+include_once("profileHeader.php");
 
 require_once 'Dao.php';
 $dao = new Dao();
@@ -23,9 +23,9 @@ if (isset($_SESSION['postForm'])) {
    
     
     <div class = "postForm"> Post form here ... 
-        <form action = "postHandler.php" method = "post">
-            <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" > </br>
-            <input  type="submit" value="Post">
+        <form action = "postHandler.php" method = "POST">
+            <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" /> </br>
+            <input type="submit" value="Post"/>
         </form>
    
     </div>
@@ -36,7 +36,7 @@ if (isset($_SESSION['postForm'])) {
                     echo "There was an error.";
             } else {
          foreach ($lines as $line) {
-           echo "<div> $line['content'] </div>";
+           echo "<div> $line['username'] </div>" . "<div> $line['content'] </div>" . "<div> $line['date_entered'] </div>";
           }
       }
       sleep(2);
@@ -51,18 +51,19 @@ if (isset($_SESSION['postForm'])) {
 
     <?php 
 
-                            if (isset($_SESSION['errors2'])) {
-                                foreach ($_SESSION['errors2'] as $errors2) {
-                                    echo "<div id='error'>{$errors2}</div>";
-                                 }
-                                 unset($_SESSION['errors2']);
-                            }
-                            if (isset($_SESSION['successPost'])) {
-                                echo "<div id='success'>{$_SESSION['successPost']}</div>";
-                                unset($_SESSION['successPost']);
-                              }
+            if (isset($_SESSION['errors2'])) {
+                foreach ($_SESSION['errors2'] as $errors2) {
+                    echo "<div id='error'>{$errors2}</div>";
+                }
+                unset($_SESSION['errors2']);
+            }
+            if (isset($_SESSION['successPost'])) {
+                echo "<div id='success'>{$_SESSION['successPost']}</div>";
+                unset($_SESSION['successPost']);
+            }
                             
     ?>
+
     </div>
 
     

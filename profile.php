@@ -64,7 +64,7 @@ if (isset($_SESSION['postForm'])) {
         echo "There was an error.";
         } else {
          foreach ($lines as $line) {
-           echo "<tr><td> ". $line['username'] . "</td><td>" . $line['content'] . "</td><td>" .$line['date_entered'] . "</td></tr>";
+           echo "<tr><td> {$line['username']} </td><td> {$line['content']} </td><td> {$line['date_entered']} </td></tr>";
         }
       }
       sleep(2);

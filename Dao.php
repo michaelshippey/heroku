@@ -80,7 +80,12 @@ class Dao {
       return;
     }
     try {
-     return $conn->query("SELECT * FROM posts where username like $username order by date_entered desc", PDO::FETCH_ASSOC);
+     $conn->prepare("SELECT * FROM posts where username=username order by date_entered desc");
+     $qResult->bindParam(":username", $username);
+     $qResult->execute();
+     $data = $qResult->fetchAll();
+     return $data;
+
     } catch(Exception $e) {
       echo print_r($e,1);
       exit;

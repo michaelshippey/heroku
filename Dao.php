@@ -83,7 +83,6 @@ class Dao {
     $saveQuery = "SELECT * FROM posts where username=:username order by date_entered desc";
     $stmt = $conn->prepare($saveQuery);
     $stmt->execute([':username'=> $username]);
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
     return $stmt;
     } catch(Exception $e) {
       echo print_r($e,1);

@@ -50,8 +50,11 @@ if (isset($_SESSION['postForm'])) {
     <ul>
     <?php
          $lines = $dao->getPosts($_SESSION['username']);
-         while($line = $lines->fetch()) {
-            echo sprintf('<li> %s </li>' ,$line['username']);
+         while($line = $lines->fetch(PDO::FETCH_ASSOC)) {
+            extract($line);
+            echo sprintf('<li> %s </li>' ,$username);
+            echo sprintf('<li> %s </li>' ,$content);
+            echo sprintf('<li> %s </li>' ,$date_entered);
          }
     ?>
          

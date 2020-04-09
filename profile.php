@@ -8,7 +8,8 @@ if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
 
 include_once("profileHeader.php");
 
-
+require_once 'Dao.php';
+$dao = new Dao();
 
 $post_preset = "";
 

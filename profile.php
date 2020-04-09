@@ -49,7 +49,7 @@ if (isset($_SESSION['postForm'])) {
     
     <ul>
     <?php
-         $lines = $dao->getPosts();
+         $lines = $dao->getPosts($_SESSION['username']);
          foreach($lines as $line) {
             echo"<li> {$line['username']} </li>"
          }

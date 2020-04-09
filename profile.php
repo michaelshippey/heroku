@@ -50,8 +50,8 @@ if (isset($_SESSION['postForm'])) {
     <ul>
     <?php
          $lines = $dao->getPosts($_SESSION['username']);
-         foreach($lines as $line) {
-            echo"<li> {$line['username']} </li>"
+         while($line = $lines->fetch()) {
+            echo"<li> {$line['username']} </li>";
          }
     ?>
          

@@ -43,7 +43,7 @@ $dao = new Dao();
     </div>
     <div class = "profilePosts"> Your Posts here ... 
     <?php
-         $lines = $dao->getPosts();
+         $lines = $dao->getPosts($_SESSION['username']);
             if (is_null($lines)) {
                     echo "There was an error.";
             } else {
@@ -59,7 +59,7 @@ $dao = new Dao();
     <br />
     <div class = "textHeader"><? echo $_SESSION['username']; ?>'s Profile</div>
 
-
+    </div>
 <?php 
 include_once('footer.php');
 ?>

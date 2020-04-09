@@ -7,7 +7,7 @@
         $errors2[] = "Error, Posts cannot be blank.";
     }
 
-    if (strlen($_POST['post']) > 0) {
+    if (strlen($_POST['post']) > 256) {
         $errors2[] = "Error, Posts cannot be longer than 256 characters.";
     }
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['auth']) || !$_SESSION['auth'])  {
 	header("Location: https://michaelshippey.herokuapp.com/login.php");
     exit;
@@ -22,7 +23,7 @@ $dao = new Dao();
     
     <div class = "postForm"> Post form here ... 
         <form action = "postHandler.php" method = "post">
-        <textarea id="post" name="post" rows="4" cols="58"></textarea>
+        <textarea id="post"  value = "<?php echo $post_preset; ?>" name="post" rows="4" cols="58"></textarea>
         <input class = "postSubmit" type="submit" name="send"  id = "sendPost" value="Post Here">
         </form>
         <?php 
@@ -36,13 +37,13 @@ $dao = new Dao();
             if (isset($_SESSION['successPost'])) {
                 echo "<div id='success'>{$_SESSION['successPost']}</div>";
                 unset($_SESSION['successPost']);
-            }
+              }
 
         ?>
     </div>
     <div class = "profilePosts"> Your Posts here ... 
     <?php
-         $lines = $dao->getComments();
+         $lines = $dao->getPosts();
             if (is_null($lines)) {
                     echo "There was an error.";
             } else {

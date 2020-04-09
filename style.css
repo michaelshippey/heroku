@@ -259,17 +259,3 @@ footer a {
     text-decoration: black;
 }
 
-table {
-    border-collapse: collapse;
-    margin-left: 30px;
-  }
-  
-  
-  td, th {
-    padding: 10 10;
-    color: white;
-  }
-  
-  th {
-    background-color: #DDD;
-  }

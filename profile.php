@@ -49,28 +49,21 @@ if (isset($_SESSION['postForm'])) {
     
     
 
-    <table id="comments">
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Post</th>
-          <th>Date Entered</th>
-       </tr>
-      </thead>
-      <tbody>
+    
       <?php
          $lines = $dao->getPosts($_SESSION['username']);
          if (is_null($lines)) {
         echo "There was an error.";
         } else {
          foreach ($lines as $line) {
-           echo "<tr><td> {$line['username']} </td><td> {$line['content']} </td><td> {$line['date_entered']} </td></tr>";
+            echo $line['username']."<br />\n";
+            echo $line['content']."<br />\n";
+            echo $line['date_entered']."<br />\n";
         }
       }
       sleep(2);
       ?>
-      </tbody>
-    </table>
+      
 
     </div>
     <img src="profile_Picture.png" height = "250" width = "200" alt="<?php echo $_SESSION['username']; ?>'s Profile:" title="<?php echo $_SESSION['username']; ?>'s Profile" />

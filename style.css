@@ -228,7 +228,7 @@ footer a {
 .profilePosts {
     float: right;
     width: 600px;
-    height:414px;
+    height:714px;
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: #dce5ee;
@@ -249,9 +249,6 @@ footer a {
 .postSubmit {
     background-color: #dec5ee;
     float: right;
-}
-.userPost {
-    text-decoration: black;
 }
 
 ul li {

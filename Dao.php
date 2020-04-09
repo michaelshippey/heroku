@@ -63,7 +63,7 @@ class Dao {
     }
 
   public function savePost($username, $comment){
-    $now ='Now()';
+    $now ="Now()";
     $this->logger->LogDebug("Saving a post [{$comment}]");
     $conn = $this->getConnection();
     $saveQuery = "INSERT INTO posts VALUES (:username, :comment, :now)";

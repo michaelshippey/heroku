@@ -21,14 +21,14 @@ if (isset($_SESSION['postForm'])) {
 ?>
    
     
-    <div class = "postForm"> Post form here ... 
+    <div class = "postForm"> Create a Post below!
         <form action = "postHandler.php" method = "POST">
             <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" /> </br>
             <input type="submit" value="Post"/>
         </form>
    
     </div>
-    <div class = "profilePosts"> Your Posts here ... 
+    <div class = "profilePosts"> View Your Posts Here!
 
 
     </div>

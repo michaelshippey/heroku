@@ -49,20 +49,6 @@ if (isset($_SESSION['postForm'])) {
     
     </div>
 
-    <?php
-        $lines = $dao->getPosts($_SESSION['username']);
-        if (is_null($lines)) {
-            echo "<span id='error'> ERROR NO POSTS FOUND </span>";
-        } else {
-            foreach ($lines as $line) {
-            echo "<span class='userPost'>" . $line['username'] . "</span>";
-            echo "<span class='userPost'>" . $line['content'] . "</span>";
-            echo "<span class='userPost'>" . $line['date_entered'] . "</span>";
-        }
-      }
-      sleep(2);
-    ?>
-
     <img src="profile_Picture.png" height = "250" width = "200" alt="<?php echo $_SESSION['username']; ?>'s Profile:" title="<?php echo $_SESSION['username']; ?>'s Profile" />
     <br />
     <div class = "textHeader"><? echo $_SESSION['username']; ?>'s Profile</div>

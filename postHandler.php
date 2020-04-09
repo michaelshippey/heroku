@@ -12,7 +12,7 @@
     }
 
     if (0 < count($errors2)) {
-        $_SESSION['postForm'] = $_POST;
+        $_SESSION['postForm1'] = $_POST;
         $_SESSION['errors2'] = $errors2;
         header("Location: https://michaelshippey.herokuapp.com/profile.php");
         exit;
@@ -21,7 +21,7 @@
     require_once 'Dao.php';
     $dao = new Dao();
     $dao->savePost($_SESSION['username'],$_POST['post']);
-    unset($_SESSION['postForm']);
+    unset($_SESSION['postForm1']);
     $_SESSION['successPost'] = "Post saved successfully";
     header("Location: https://michaelshippey.herokuapp.com/profile.php");
     exit;

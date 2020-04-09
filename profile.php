@@ -47,18 +47,14 @@ if (isset($_SESSION['postForm'])) {
     <div class = "profilePosts"> View Your Posts Here! 
     
     
-    
+    <ul>
     <?php
          $lines = $dao->getPosts($_SESSION['username']);
-        if (is_null($lines)) {
-        echo "<div>There was an error.</div>";
-        } else {
-         foreach ($lines as $line) {
-            echo "<div>" . $line['username']. $line['content']. $line['date_entered'] . "</div>"
-        }
-      }
-      sleep(2);
-      ?>
+    ?>
+         <?php foreach($lines as $line): ?>
+         <li><?=$line['username']?> </li>
+         <?php endforeach ?>
+    </ul>
     
     </div>
 

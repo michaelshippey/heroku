@@ -80,10 +80,8 @@ class Dao {
       return;
     }
     try {
-     $saveQuery = "SELECT * FROM posts where username=:username order by date_entered desc";
-     $qResult = $conn->prepare($saveQuery);
-     $qResult->bindParam(":username", $username);
-     $qResult->execute();
+     $qResult = $conn->prepare("SELECT * FROM posts where username like ? order by date_entered desc");
+     $qResult->execute(array("%$username%"));
      $data = $qResult->fetchAll();
      return $data;
 

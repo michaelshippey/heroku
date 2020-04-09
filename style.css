@@ -258,3 +258,20 @@ footer a {
 .userPost {
     text-decoration: black;
 }
+
+table {
+    border-collapse: collapse;
+    margin-left: 30px;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  td, th {
+    padding: 10 10;
+  }
+  
+  th {
+    background-color: #DDD;
+  }

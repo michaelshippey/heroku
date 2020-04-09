@@ -52,7 +52,7 @@ if (isset($_SESSION['postForm'])) {
     <?php
         $lines = $dao->getPosts($_SESSION['username']);
         if (is_null($lines)) {
-            echo "<div id='error'>ERROR NO POSTS FOUND</div>";
+            echo "<span id='error'> ERROR NO POSTS FOUND </span>";
         } else {
             foreach ($lines as $line) {
             echo "<span class='userPost'>" . $line['username'] . "</span>";

@@ -13,7 +13,7 @@
     }
 
     if (0 < count($errors2)) {
-        $_SESSION['postForm1'] = $_POST;
+        $_SESSION['postForm'] = $_POST;
         $_SESSION['errors2'] = $errors2;
         header("Location: https://michaelshippey.herokuapp.com/profile.php");
         exit;

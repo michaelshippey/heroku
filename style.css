@@ -234,6 +234,7 @@ footer a {
     float: right;
     width: 580px;
     height:414px;
+    margin-top: 20px;
     background-color: #dce5ee;
     padding: 5px;
 }

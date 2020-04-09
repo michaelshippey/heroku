@@ -232,9 +232,10 @@ footer a {
 
 .profilePosts {
     float: right;
-    width: 580px;
+    width: 600px;
     height:414px;
     margin-top: 20px;
+    padding-top: 20px;
     background-color: #dce5ee;
     padding: 5px;
 }

@@ -26,6 +26,20 @@ if (isset($_SESSION['postForm'])) {
             <input value = "<?php echo $post_preset; ?>" type ="text" id="post" name="posted" /> </br>
             <input type="submit" value="Post"/>
         </form>
+        <?php 
+
+            if (isset($_SESSION['errors2'])) {
+                foreach ($_SESSION['errors2'] as $errors2) {
+                    echo "<div id='error'>{$errors2}</div>";
+                }
+                unset($_SESSION['errors2']);
+            }
+            if (isset($_SESSION['successPost'])) {
+                echo "<div id='success'>{$_SESSION['successPost']}</div>";
+                unset($_SESSION['successPost']);
+            }
+
+        ?>
    
     </div>
     <div class = "profilePosts"> View Your Posts Here!

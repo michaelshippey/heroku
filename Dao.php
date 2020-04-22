@@ -82,19 +82,25 @@ class Dao {
       $q = $conn->prepare($saveQuery);
       $q->execute();
       $result = $q->fetch(PDO::FETCH_ASSOC);
-      if($result->rowCount() > 0){
-        if(password_verify($password, $result['password'])){
+      if($result->rowCount() > 0) {
+        if(password_verify($password, $result['password'])){ 
           unset($_SESSION['userForm']);
           $_SESSION['username'] = $_POST['myname'];
           $_SESSION['auth'] = true;
           header("Location: https://michaelshippey.herokuapp.com/profile.php");
           exit;
+        }else {
+          
+            $_SESSION['auth'] = false;
+            $_SESSION['loginError'] = "Invalid Username or Password.";
+            header("Location: https://michaelshippey.herokuapp.com/login.php");
+          
         }
-         else {
-          $_SESSION['auth'] = false;
-          $_SESSION['loginError'] = "Invalid Username or Password.";
-          header("Location: https://michaelshippey.herokuapp.com/login.php");
-        }
+         
+      } else {
+        $_SESSION['auth'] = false;
+        $_SESSION['loginError'] = "Invalid Username or Password.";
+        header("Location: https://michaelshippey.herokuapp.com/login.php");
       }
     }
 }

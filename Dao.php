@@ -31,17 +31,18 @@ class Dao {
     
     public function saveUser($firstname, $lastname, $email, $username, $password){
         $id ='';
+        $hashedPassword ='';
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $this->logger->LogDebug("Saving a user [{$username}]");
         $conn = $this->getConnection();
         $saveQuery ="INSERT INTO users
-				VALUES (:id,:username,:firstname,:lastname,:email,:password)";
+        VALUES (:id,:username,:firstname,:lastname,:email,:password)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":id", $id);
         $q->bindParam(":username", $username);
         $q->bindParam(":firstname", $firstname);
         $q->bindParam(":lastname", $lastname);
         $q->bindParam(":email", $email);
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $q->bindParam(":password", $hashedPassword);
         $q->execute();
     }
@@ -95,6 +96,6 @@ class Dao {
 
       }
 
-
+    }
 }
 ?>

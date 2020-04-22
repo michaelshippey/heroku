@@ -23,9 +23,9 @@ if (isset($_SESSION['postForm'])) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("#postlist").fadeIn("6000")
-    $("#success").fadeOut("6000");
-    $("#error").fadeOut("6000");
+    $("#postlist").fadeIn("3000")
+    $("#success").fadeOut("3000");
+    $("#error").fadeOut("3000");
 });
 </script>
     

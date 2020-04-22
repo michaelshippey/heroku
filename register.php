@@ -53,7 +53,7 @@ include("header.php");
                             <input value = "<?php echo $password_preset; ?>"  type = "password" id ="password" name ="password" size = "25" placeholder="Password" /> <br /><br />
                             <label for = "pword2">Enter Your Password Again: </label>
                             <input value = "<?php echo $password2_preset; ?>"  type = "password" id ="password2" name ="password2" size = "25" placeholder="Confirm Password" /> <br /><br />
-                            <label for = "submit2">Sign Up!: </label>
+                            <label for = "submit">Sign Up!: </label>
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>
@@ -73,6 +73,7 @@ include("header.php");
                               }
                             
                         ?>
+                        
                     </td>
                 </tr>
             </table>

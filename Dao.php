@@ -26,23 +26,24 @@ class Dao {
 
     public function login($username , $password){
       $this->logger->LogDebug("Logging in user [{$username}]");
-      $this->passwordMatch($password);
+      $this->passwordMatch($username, $password);
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){
-        $id ='';
-        $hashedPassword ='';
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $id = '';
+        
         $this->logger->LogDebug("Saving a user [{$username}]");
         $conn = $this->getConnection();
-        $saveQuery ="INSERT INTO users VALUES (:id,:username,:firstname,:lastname,:email,:password1)";
+        $hashpword = '';
+        $hashpword = password_hash($password, PASSWORD_DEFAULT);
+        $saveQuery ="INSERT INTO users VALUES (:id,:username,:firstname,:lastname,:email,:password)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":id", $id);
         $q->bindParam(":username", $username);
         $q->bindParam(":firstname", $firstname);
         $q->bindParam(":lastname", $lastname);
         $q->bindParam(":email", $email);
-        $q->bindParam(":password1", $hashedPassword);
+        $q->bindParam(":password", $hashpword);
         $q->execute();
     }
 
@@ -74,9 +75,10 @@ class Dao {
     }
   }
 
-  public function passwordMatch($password){
+  public function passwordMatch($username, $password){
+    
       $conn = $this->getConnection();
-      $saveQuery = "SELECT*FROM users where password=:password";  
+      $saveQuery = "SELECT * FROM users where username=:username";  
       $q = $conn->prepare($saveQuery);
       $q->execute();
       $result = $q->fetch(PDO::FETCH_ASSOC);
@@ -87,14 +89,15 @@ class Dao {
           $_SESSION['auth'] = true;
           header("Location: https://michaelshippey.herokuapp.com/profile.php");
           exit;
+        }
         } else {
           $_SESSION['auth'] = false;
           $_SESSION['loginError'] = "Invalid Username or Password.";
           header("Location: https://michaelshippey.herokuapp.com/login.php");
         }
+        
 
-      }
-
+      
     }
 }
 ?>

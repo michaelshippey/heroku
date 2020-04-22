@@ -90,14 +90,12 @@ class Dao {
           header("Location: https://michaelshippey.herokuapp.com/profile.php");
           exit;
         }
-        } else {
+         else {
           $_SESSION['auth'] = false;
           $_SESSION['loginError'] = "Invalid Username or Password.";
           header("Location: https://michaelshippey.herokuapp.com/login.php");
         }
-        
-
-      
+      }
     }
 }
 ?>

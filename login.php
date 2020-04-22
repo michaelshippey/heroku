@@ -9,8 +9,17 @@ include_once('header.php');
         $username1_preset = $_SESSION['userForm']['myname'];
         $password1_preset = $_SESSION['userForm']['mypword'];
     }
+  
 
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#error").fadeOut("slow");
+  });
+});
+</script>
         <div  id = "content">
           <form id = "formbox" action = "loginHandler.php" method ="POST">
             <h2>Username</h2> <input value ="<?php echo $username1_preset; ?>" type="textbox" name = "myname"> </br>
@@ -26,7 +35,9 @@ include_once('header.php');
                 foreach ($_SESSION['errors1'] as $errors1) {
                     echo "<h2 id='error'>{$errors1}</h2>";
                 }
-                unset($_SESSION['errors1']);
+                unset($_SESSION['errors1']); ?>
+                <button>Close Errors</button><br><br>
+                <?php 
             }
         ?>
 

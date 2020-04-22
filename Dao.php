@@ -26,24 +26,7 @@ class Dao {
 
     public function login($username , $password){
       $this->logger->LogDebug("Logging in user [{$username}]");
-      $conn = $this->getConnection();
-      $saveQuery = "SELECT*FROM users where username=:username and password=:password";
-      $qResult = $conn->prepare($saveQuery);
-      $qResult->bindParam(":username", $username);
-      $qResult->bindParam(":password", $password);
-      $qResult->execute();
-      if($qResult->rowCount() > 0){
-        unset($_SESSION['userForm']);
-        $_SESSION['username'] = $_POST['myname'];
-        $_SESSION['auth'] = true;
-        header("Location: https://michaelshippey.herokuapp.com/profile.php");
-        exit;
-      }else{
-        $_SESSION['auth'] = false;
-        $_SESSION['loginError'] = "Invalid Username or Password.";
-        header("Location: https://michaelshippey.herokuapp.com/login.php");
-      }
-      
+      passwordMatch($passsword);
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){
@@ -58,7 +41,8 @@ class Dao {
         $q->bindParam(":firstname", $firstname);
         $q->bindParam(":lastname", $lastname);
         $q->bindParam(":email", $email);
-        $q->bindParam(":password", $password);
+        $hashedPassword = password_hash($passsword, $_PASSWORD_DEFAULT)
+        $q->bindParam(":password", $hasehedPassword);
         $q->execute();
     }
 
@@ -89,6 +73,28 @@ class Dao {
       exit;
     }
   }
+
+  public function passwordMatch($password){
+      $conn = $this->getConnection();
+      $saveQuery = "SELECT*FROM users where password=:password";  
+      $q = $conn->prepare($saveQuery);
+      $q->execute();
+      $result = $q->fetch(PDO::FETCH_ASSOC);
+      if($result->rowCount() > 0){
+        if(password_verify($password, $result['password'])){
+          unset($_SESSION['userForm']);
+          $_SESSION['username'] = $_POST['myname'];
+          $_SESSION['auth'] = true;
+          header("Location: https://michaelshippey.herokuapp.com/profile.php");
+          exit;
+        } else {
+          $_SESSION['auth'] = false;
+          $_SESSION['loginError'] = "Invalid Username or Password.";
+          header("Location: https://michaelshippey.herokuapp.com/login.php");
+        }
+
+      }
+
 
 }
 ?>

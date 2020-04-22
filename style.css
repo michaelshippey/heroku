@@ -1,7 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 12px;
 }
 
@@ -71,7 +71,7 @@
 }
 
 h2 { 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 18px;
     padding: 8px;
     padding-top: 40px;
@@ -156,7 +156,7 @@ footer a {
 
 
 #formbox {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 18px;
     padding: 8px;
     padding-top: 40px;
@@ -218,7 +218,7 @@ footer a {
 }
 
 ul li {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     list-style-type: none;
     font-size: 14px;
     margin: 5px;

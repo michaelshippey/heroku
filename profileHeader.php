@@ -1,6 +1,9 @@
 <html>
     <head>
         <link rel ="stylesheet" type="text/css" href="style.css"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+        </style>
     </head>
     <body class = "sitebody">
         <div class="header">

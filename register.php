@@ -28,6 +28,7 @@ include("header.php");
 
 ?>
 
+
     <div  id = "content">
             <table id = "signuptbl"> 
                 <tr> 
@@ -38,13 +39,21 @@ include("header.php");
                         <h2> Sign up Today!</h2>
 
                         <form action = "registerProcess.php" method = "POST">
+                            <label for = "firstname">Enter Your First Name: </label>
                             <input value = "<?php echo $firstname_preset; ?>"  type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
+                            <label for = "lastname">Enter Your Last Name: </label>
                             <input value = "<?php echo $lastname_preset; ?>"  type = "textbox" id ="lname" name ="lname" size = "25" placeholder="Last Name" /> <br /><br />
+                            <label for = "email">Enter Your Email: </label>
                             <input value = "<?php echo $email_preset; ?>"  type = "textbox" id ="email" name ="email" size = "25" placeholder="Email Address" /> <br /><br />
+                            <label for = "emailc">Enter Your Email Again: </label>
                             <input value = "<?php echo $email2_preset; ?>"  type = "textbox" id ="email2" name ="email2" size = "25" placeholder="Confirm Email" /> <br /><br />
+                            <label for = "username">Enter Your Username: </label>
                             <input value = "<?php echo $username_preset; ?>"  type = "textbox" id ="username" name ="username" size = "25" placeholder="Username" /> <br /><br />
+                            <label for = "password">Enter Your Password: </label>
                             <input value = "<?php echo $password_preset; ?>"  type = "password" id ="password" name ="password" size = "25" placeholder="Password" /> <br /><br />
+                            <label for = "password2">Enter Your Password Again: </label>
                             <input value = "<?php echo $password2_preset; ?>"  type = "password" id ="password2" name ="password2" size = "25" placeholder="Confirm Password" /> <br /><br />
+                            <label for = "submit">Submit: </label>
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
 
                         </form>

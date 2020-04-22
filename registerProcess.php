@@ -2,7 +2,6 @@
 session_start();
 $errors = array();
 
-
         $firstname = $_POST['fname'];
         $lastname = $_POST['lname'];
         $email= $_POST['email'];
@@ -10,8 +9,6 @@ $errors = array();
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password2 = $_POST['password2'];
-
-
 
         if(!ctype_alpha($username)) {
             $errors[] = "Error, alpha characters only in the username.";
@@ -79,7 +76,7 @@ $errors = array();
             $dao = new Dao();
             unset($_SESSION['form']);
             $dao->saveUser($_POST['fname'], $_POST['lname'],
-            $_POST['email'], $_POST['username'], $_POST['password']);
+            $_POST['email'], $_POST['username'], $_SESSION['password']);
             $_SESSION['success'] = "New user registered successfully";
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;

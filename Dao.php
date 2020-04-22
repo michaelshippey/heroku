@@ -78,7 +78,7 @@ class Dao {
   public function passwordMatch($username, $password){
     
       $conn = $this->getConnection();
-      $saveQuery = "SELECT password FROM users where username=:username";  
+      $saveQuery = "SELECT * FROM users where username=:username";  
       $q = $conn->prepare($saveQuery);
       $q->execute();
       $result = $q->fetch(PDO::FETCH_ASSOC);

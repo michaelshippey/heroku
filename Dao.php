@@ -26,7 +26,7 @@ class Dao {
 
     public function login($username , $password){
       $this->logger->LogDebug("Logging in user [{$username}]");
-      $this->passwordMatch($passsword);
+      $this->passwordMatch($password);
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){

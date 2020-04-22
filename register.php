@@ -32,7 +32,7 @@ include("header.php");
 <script>
 $(document).ready(function() {
   $('#error').click(function() {
-    $('#error').fadeOut("slow");
+    $('#error').hide()
   });
   $('#success').click(function() {
     $('#success').fadeOut("slow");
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
                             if (isset($_SESSION['errors'])) {
                                 foreach ($_SESSION['errors'] as $errors) {
-                                    echo "<div id='error'>{$errors}</div>";
+                                    echo "<div data-id='error'>{$errors}</div>";
                                  }
                                  unset($_SESSION['errors']);
                             }

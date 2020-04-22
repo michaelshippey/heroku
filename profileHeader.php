@@ -11,7 +11,7 @@
                 <div class = logo>
                     <a href = "register.php"> <img src = "logo.png"/> </a>
                 </div>
-                <div id="navBar">
+                <nav id="navBar">
                     <a href ="register.php"> Home </a>
                     <a href ="profile.php"> Profile </a>
                     <a href ="register.php"> Sign Up</a>
@@ -24,7 +24,7 @@
     <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script>
     var url = window.location.href.split("/"); //replace string with location.href
-    var navLinks = document.getElementsByTagName("navBar")[0].getElementsByTagName("a");
+    var navLinks = document.getElementsByTagName("nav")[0].getElementsByTagName("a");
     //naturally you could use something other than the <nav> element
     var i=0;
     var currentPage = url[url.length - 1];

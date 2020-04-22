@@ -32,7 +32,7 @@ include("header.php");
 <script>
 $(document).ready(function() {
   $('.error').click(function() {
-    $('.error').hide()
+    $('.error').fadeOut("slow");
   });
   $('#success').click(function() {
     $('#success').fadeOut("slow");

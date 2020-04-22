@@ -27,6 +27,7 @@ $(document).ready(function() {
     $('#error').fadeOut("slow");
   });
   $('#success').fadeOut("slow");
+  $(".postlist").fadeIn("slow")
 });
 </script>
     
@@ -56,12 +57,12 @@ $(document).ready(function() {
     <div class = "profilePosts"> View Your Posts Here! 
     
     
-    <ul id = "postlist">
+    <ul >
     <?php
          $lines = $dao->getPosts($_SESSION['username']);
          while($line = $lines->fetch(PDO::FETCH_ASSOC)) {
             extract($line);
-            echo sprintf('<li> Posted by: %s </br> Post Content: %s </br> Posted at: %s </br> </li> ' , $username, $content, $date_entered);
+            echo sprintf('<li class = "postlist"> Posted by: %s </br> Post Content: %s </br> Posted at: %s </br> </li> ' , $username, $content, $date_entered);
          }
     ?>
          

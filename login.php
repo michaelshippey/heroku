@@ -15,8 +15,8 @@ include_once('header.php');
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-  $("#error").click(function() {
-    $('#error').fadeOut("slow");
+  $(".error").click(function() {
+    $('.error').fadeOut("slow");
   });
 });
 </script>
@@ -28,7 +28,7 @@ $(document).ready(function() {
             <a href = "register.php"> Don't have an Account? </a>
             <?php
               if (isset($_SESSION['loginError'])) {
-                echo "<h2 id='error'>{$_SESSION['loginError']}</h2>";
+                echo "<h2 id='error' class='error'>{$_SESSION['loginError']}</h2>";
                 unset($_SESSION['loginError']);
               }
               if (isset($_SESSION['errors1'])) {

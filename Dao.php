@@ -80,6 +80,7 @@ class Dao {
       $conn = $this->getConnection();
       $saveQuery = "SELECT * FROM users where username=:username";  
       $q = $conn->prepare($saveQuery);
+      $q->bindParam(":username", $username);
       $q->execute();
       $result = $q->fetch(PDO::FETCH_ASSOC);
       if(password_verify($password, $result['password'])) {

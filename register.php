@@ -32,10 +32,10 @@ include("header.php");
 <script>
 $(document).ready(function() {
   $('#error').click(function() {
-    $('#error').fadeOut('slow');
+    $('div').fadeOut("slow");
   });
   $('#success').click(function() {
-    $('#success').fadeOut('slow');
+    $('div').fadeOut("slow");
   });
 
 });
@@ -49,7 +49,7 @@ $(document).ready(function() {
                     <td width = "40%" valign="top">
                         <h2> Sign up Today!</h2>
 
-                        <form action = "registerProcess.php" method = "POST">
+                        <form name="registerForm" action = "registerProcess.php" method = "POST">
                             <label for = "firstname1">Enter Your First Name: </label>
                             <input value = "<?php echo $firstname_preset; ?>"  type = "textbox" id ="fname" name ="fname" size = "25" placeholder="First Name" /> <br /><br />
                             <label for = "lastname1">Enter Your Last Name: </label>
@@ -66,9 +66,11 @@ $(document).ready(function() {
                             <input value = "<?php echo $password2_preset; ?>"  type = "password" id ="password2" name ="password2" size = "25" placeholder="Confirm Password" /> <br /><br />
                             <label for = "submit">Sign Up!: </label>
                             <input type = "submit" name = "register" value = "Sign up!">  <br /><br />
-
+                            
                         </form>
                         <div><a href = "login.php"> Already have an Account? </a> </div>
+
+
 
                         <?php 
 

@@ -41,7 +41,7 @@ class Dao {
         $q->bindParam(":firstname", $firstname);
         $q->bindParam(":lastname", $lastname);
         $q->bindParam(":email", $email);
-        $hashedPassword = password_hash($passsword, PASSWORD_DEFAULT);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $q->bindParam(":password", $hashedPassword);
         $q->execute();
     }

@@ -29,7 +29,7 @@ $(document).ready(function() {
   $('#success').click(function() {
     $('#success').fadeOut("slow");
   });
-  $(".postlist").fadeIn("slow")
+  $(".postlist").fadeIn("slow");
 });
 </script>
     

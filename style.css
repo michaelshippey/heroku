@@ -69,6 +69,11 @@
     background-image: url(menu_back_drop.png);
     text-decoration: underline;
 }
+#navBar .current {
+    background-image: url(menu_back_drop.png);
+    text-decoration: underline;
+}
+
 
 h2 { 
     font-family: 'Assistant', sans-serif;

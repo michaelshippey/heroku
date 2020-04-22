@@ -26,7 +26,9 @@ $(document).ready(function() {
   $('#error').click(function() {
     $('#error').fadeOut("slow");
   });
-  $('#success').fadeOut("slow");
+  $('#success').click(function() {
+    $('#success').fadeOut("slow");
+  });
   $(".postlist").fadeIn("slow")
 });
 </script>

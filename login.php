@@ -33,7 +33,7 @@ $(document).ready(function() {
               }
               if (isset($_SESSION['errors1'])) {
                 foreach ($_SESSION['errors1'] as $errors1) {
-                    echo "<h2 id='error'>{$errors1}</h2>";
+                    echo "<h2 id='error' class='error'>{$errors1}</h2>";
                 }
                 unset($_SESSION['errors1']); 
             }

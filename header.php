@@ -19,15 +19,19 @@
                 </div>
             </div>
         </div>
-        
+
         <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script>
-    $(function(){
-    $('navBar').each(function() {
-        if ($(this).prop('href') == window.location.href) {
-        $(this).addClass('current');
-        }
-    });
-    });
+    var url = window.location.href.split("/"); //replace string with location.href
+    var navLinks = document.getElementsByTagName("navBar")[0].getElementsByTagName("a");
+    //naturally you could use something other than the <nav> element
+    var i=0;
+    var currentPage = url[url.length - 1];
+    for(i;i<navLinks.length;i++){
+        var lb = navLinks[i].href.split("/");
+        if(lb[lb.length-1] == currentPage) {
+            navLinks[i].className = "current";
+  }
+  }
 </script>
   

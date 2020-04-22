@@ -35,9 +35,7 @@ $(document).ready(function(){
                 foreach ($_SESSION['errors1'] as $errors1) {
                     echo "<h2 id='error'>{$errors1}</h2>";
                 }
-                unset($_SESSION['errors1']); ?>
-                <button>Close Errors</button><br><br>
-                <?php 
+                unset($_SESSION['errors1']); 
             }
         ?>
 

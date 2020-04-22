@@ -76,7 +76,7 @@ $errors = array();
             $dao = new Dao();
             unset($_SESSION['form']);
             $dao->saveUser($_POST['fname'], $_POST['lname'],
-            $_POST['email'], $_POST['username'], $_SESSION['password']);
+            $_POST['email'], $_POST['username'], $_POST['password']);
             $_SESSION['success'] = "New user registered successfully";
             header("Location: https://michaelshippey.herokuapp.com/register.php");
             exit;

@@ -26,7 +26,7 @@ class Dao {
 
     public function login($username , $password){
       $this->logger->LogDebug("Logging in user [{$username}]");
-      passwordMatch($passsword);
+      $this->passwordMatch($passsword);
     }
     
     public function saveUser($firstname, $lastname, $email, $username, $password){
@@ -42,7 +42,7 @@ class Dao {
         $q->bindParam(":lastname", $lastname);
         $q->bindParam(":email", $email);
         $hashedPassword = password_hash($passsword, $_PASSWORD_DEFAULT)
-        $q->bindParam(":password", $hasehedPassword);
+        $q->bindParam(":password", $hashedPassword);
         $q->execute();
     }
 

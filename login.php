@@ -14,8 +14,10 @@ include_once('header.php');
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-    $("#error").fadeOut("3000");
+$(document).ready(function() {
+  $('#error').click(function() {
+    $('#error').fadeOut('slow');
+  });
 });
 </script>
         <div  id = "content">

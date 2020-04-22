@@ -22,10 +22,11 @@ if (isset($_SESSION['postForm'])) {
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-    $("#postlist").fadeIn("3000")
-    $("#success").fadeOut("3000");
-    $("#error").fadeOut("3000");
+$(document).ready(function() {
+  $('#error').click(function() {
+    $('#error').fadeOut('slow');
+  });
+  $('#success').fadeOut('slow');
 });
 </script>
     

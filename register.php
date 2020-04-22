@@ -30,9 +30,14 @@ include("header.php");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-    $("#success").fadeOut("3000");
-    
+$(document).ready(function() {
+  $('#error').click(function() {
+    $('#error').fadeOut('slow');
+  });
+  $('#success').click(function() {
+    $('#success').fadeOut('slow');
+  });
+
 });
 </script>
     <div  id = "content">
@@ -70,7 +75,6 @@ $(document).ready(function(){
                             if (isset($_SESSION['errors'])) {
                                 foreach ($_SESSION['errors'] as $errors) {
                                     echo "<div id='error'>{$errors}</div>";
-                                    echo"<script> $(document).ready(function(){$("#success").fadeOut("3000");});</script>"
                                  }
                                  unset($_SESSION['errors']);
                             }

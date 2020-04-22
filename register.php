@@ -76,7 +76,7 @@ $(document).ready(function() {
 
                             if (isset($_SESSION['errors'])) {
                                 foreach ($_SESSION['errors'] as $errors) {
-                                    echo "<div data-id='error'>{$errors}</div>";
+                                    echo "<div data-id='error' id='error'>{$errors}</div>";
                                  }
                                  unset($_SESSION['errors']);
                             }

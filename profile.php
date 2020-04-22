@@ -23,8 +23,9 @@ if (isset($_SESSION['postForm'])) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("#success").fadeOut("2500");
-    $("#error").fadeOut("2500");
+    $("#postlist").fadeIn("6000")
+    $("#success").fadeOut("6000");
+    $("#error").fadeOut("6000");
 });
 </script>
     
@@ -54,7 +55,7 @@ $(document).ready(function(){
     <div class = "profilePosts"> View Your Posts Here! 
     
     
-    <ul>
+    <ul id = "postlist">
     <?php
          $lines = $dao->getPosts($_SESSION['username']);
          while($line = $lines->fetch(PDO::FETCH_ASSOC)) {

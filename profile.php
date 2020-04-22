@@ -20,7 +20,13 @@ if (isset($_SESSION['postForm'])) {
 
 
 ?>
-   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#success").fadeOut("2500");
+    $("#error").fadeOut("2500");
+});
+</script>
     
     <div class = "postForm"> Create a Post below!
         <form action = "postHandler.php" method = "POST">

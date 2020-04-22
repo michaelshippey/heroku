@@ -16,7 +16,7 @@ include_once('header.php');
 <script>
 $(document).ready(function() {
   $("#error").click(function() {
-    $('div').fadeOut("slow");
+    $('#error').fadeOut("slow");
   });
 });
 </script>

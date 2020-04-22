@@ -24,7 +24,7 @@ if (isset($_SESSION['postForm'])) {
 <script>
 $(document).ready(function() {
   $('#error').click(function() {
-    $('div').fadeOut("slow");
+    $('#error').fadeOut("slow");
   });
   $('#success').fadeOut("slow");
 });
